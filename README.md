@@ -50,7 +50,7 @@ Does the opening of showrooms increase online sales?
 
 We start by cleaning and preprocessing of the data (LINK). We aggregate online sales data on the year-quarter level. We also aggregate sales on postal code area level, and geocode the location of the showrooms and of each postal code. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period as some showrooms had opened before. We additionally augment the dataset with the average population density and credit score of the postal code area (LINK TO DATA DESCRIPTION).
 
-The challenge - as usual with causal inference - is to ensure that we don't misinterpret mere correlations as causal relationships, but instead recover as accurate as possible the "true" parameters. A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). For example, all showrooms are located in urban areas. At the same time, consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. FOr example, the covid lockdowns impacted urban and rural consumer behavior in different ways. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions.
+The challenge - as usual with causal inference - is to ensure that we don't misinterpret mere correlations as causal relationships, but instead recover as accurate as possible the "true" parameters. A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). For example, all showrooms are located in urban areas. At the same time, consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. For example, the covid lockdowns impacted urban and rural consumer behavior in different ways. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions.
 
 PLOT "Pandemic_Growth_by_PopulationDensity"
 *brief description of plot*
@@ -59,7 +59,7 @@ To tackle these challenges and obtain robust estimates, we employ three state-of
 
 #### Event-study Difference-in-Differences with K-Nearest Neighbors
 
-First, we use nearest neighbor matching to build a control group
+First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e. to SHOW what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match each
 
 1) Plotting online sales in the treated areas vs. those of a matched control group:
 

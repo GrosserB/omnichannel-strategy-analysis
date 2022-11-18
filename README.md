@@ -59,22 +59,22 @@ To tackle these challenges and obtain robust estimates, we employ three state-of
 
 #### Event-study Difference-in-Differences with K-Nearest Neighbors
 
-First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e. to SHOW what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match each
+First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e. to SHOW what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match treated each postal code area with TWO other postal code areas using nearest neighbor matching based on on the variables (i) population density, (ii) average credit quality and (iii) total online sales in 2015-Q1, the first quarter in our sample. In a multivariate regression, these three variables explain about 70% of the cross-sectional variation in the final quarter of our sample. We match two instead of just one control postal code to each treatment postal code to increase the sample size and thereby reduce the standard errors in our estimation.
+
 
 1) Plotting online sales in the treated areas vs. those of a matched control group:
 
 PLOT
 
-Interpretation: before the opening of the showroom, online sales grow at similar rates. After the showroom opens, the times series diverge and the areas around the showroom increasing their online order volume at a faster rate.
+Interpretation: before the opening of the showroom, online sales grow at similar rates in treatment and control areas, After the showroom opens, the series diverge and the areas around the showroom increase their online order volume at a faster rate. This simple plot provides first evidence to the effect of the showroom on online sales.
 
+To analyze the effect of the showroom opening in more detail, we next run an event-style difference-in-differences regression:
 
-2) Running an event study-type difference-in-differences analysis
-
-The following table shows the results of the following regression, where [description of the parameters]
-
-LATEX: regression equation
 
 SCREENSHOT TABLE
+
+The tables show the results of the following linear regression: REGRESSION EQUATION IN LATEX
+where
 
 
 

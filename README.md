@@ -70,22 +70,22 @@ Interpretation: before the opening of the showroom, online sales grow at similar
 
 To analyze the effect of the showroom opening in more detail, we next run an event-style difference-in-differences regression:
 
-
 SCREENSHOT TABLE
 
 The tables show the results of the following linear regression: REGRESSION EQUATION IN LATEX
 where the variable Post is an indicator variable that equals one for all year-quarters after the showoom opened, and zero otherwise. The variable treatment is an indicator variable that equals one for all postal code areas that are within the 50km range around the showroom, and zero for all control postal code areas. Post_x_Treament is the interaction term of the two variables. The dependent (aka "target") variable is the natural logarithm of one plus the quarterly total order value in each postal code area. As the dependent variable is logarized (CHECK), we can interpret the parameter estimate on the interaction term "Post_x_Treated" as the mean percentage change in order volume for the treated units after the opneing of the showroom, relative to the untreated postal code areas. Hence, the estimates for the two showroom openings show an increase of 10% and 12%. Both estimates are statistically significant.
 
 
-
-
-
 #### Synthetic Control Method
 
+We next employ the Synthetic Control Method ("SCM") to analyze the effect of the showroom opening online sales. Similarly to the previous methodology, SCM employs a control group as counterfactual, and uses the Post-treatment periods to estimate the treatment effect. The major difference lies in how the control group is constructed. SCM selects weights to construct a synthetic version of the treated unit such that the outcome in the pre-treatment periods match the outcome of the actual treated unit as closely as possible. In contrast to DiD only one aggregated version of the treated unit exists, so no parameters are estimated (CHECK). Instead, the simple difference between the actual outcome and the synthetic outcome represents the treatment effect estimate.
 
 3) Synthetic Control Method
 
 PLOT
+
+Interpretation:
+
 
 
 #### Two-way Fixed-effects Difference-in-Difference

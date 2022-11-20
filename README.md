@@ -89,30 +89,19 @@ Descrpition and interpretation: In the pre-treatment period the outcome variable
 
 #### Two-way Fixed-effects Difference-in-Difference
 
-In the first section, we use the standard (or event study-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time, without a clear way to aggregate the results, including confidence bands, of multiple events. This is where TWFE is coming in. In recent years,an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, in particular, multiple time periods and heterogenous or dynamic treatment effects, the estimator delivered biased results). We use the implementation of the corrected version of the TWFE estimator of Callaway & Sant'Anna (2021). It is only available in R. It estimates
+In the first section, we use the standard (or event study-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time, without a clear way to aggregate the results, including confidence bands, of multiple events. This is where TWFE is coming in. In recent years,an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, in particular, multiple time periods and heterogenous or dynamic treatment effects, staggered the estimator delivered biased results). We use the implementation of the corrected version of the TWFE estimator of Callaway & Sant'Anna (2021). It is only available in R. The package runs the following fixed effects regression: LATEX where the variables are defined as in (LINK)
 
-
-4) Aggregated Fixed Effects Difference-in-Differences Analysis
-
-LATEX: regression equation
 
 PLOT
 
 SCREENSHOT TABLE
 
-Interpretation: as with the simple difference-in-differences analysis
 
+#### Discussion & Summary of Results
 
-#### Discussion
+The results of the analyses show robust evidence of a significant effect of offline showrooms on online sales. Employing three different quasi-experimental methods, we find a positive effect of between 7% -20%.
 
-
-
-Summary of results: We regard the results of the analyses as robust evidence of a significant effect of offline showrooms on online sales.
-
-
-
-
-all methods employed here are quasi-experimental and attempt to guard against omitted variable bias. However, valid conclusions require assumptions. In particular
+All of the methods employed here are quasi-experimental and let us avaiod as much as possible the omitted variable bias. However, valid conclusions require assumptions. In particular
 
 
 
@@ -127,9 +116,6 @@ what are threats/potential limitations
 
 As with all approaches to causal inference on non-experimental data, valid conclusions require strong assumptions. This method assumes that the outcome of the treated unit can be explained in terms of a set of control units that were themselves not affected by the intervention. Furthermore, the relationship between the treated and control units is assumed to remain stable during the post-intervention period. Including only control units in your dataset that meet these assumptions is critical to the reliability of causal estimates.
 
-
-Screenshots/Pictures
-Cursory discussion of results: what do the numbers say, what is our interpretation/how do we combine these results from the different methods, how much do we trust the results/what are potential limitations
 
 ### So-What
 

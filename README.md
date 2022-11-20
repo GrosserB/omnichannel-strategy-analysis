@@ -99,9 +99,18 @@ SCREENSHOT TABLE
 
 #### Discussion & Summary of Results
 
-The results of the analyses show robust evidence of a significant effect of offline showrooms on online sales. Employing three different quasi-experimental methods, we find a positive effect of between 7% -20%.
+The results of the analyses show robust evidence of a significant positive effect of offline showrooms on online sales, of between 7% -20%.
 
-All of the methods employed here are quasi-experimental and let us avaiod as much as possible the omitted variable bias. However, valid conclusions require assumptions. In particular
+The fact that all three methods
+
+
+ Employing three different quasi-experimental methods, we find a positive effect
+
+How much can we trust
+
+
+
+All of the methods employed here are quasi-experimental and let us avaiod as much as possible the omitted variable bias. At the same time,
 
 
 

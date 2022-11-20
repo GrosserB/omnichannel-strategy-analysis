@@ -89,6 +89,7 @@ Descrpition and interpretation: In the pre-treatment period the outcome variable
 
 #### Two-way Fixed-effects Difference-in-Difference
 
+In the first section, we use the standard (or event study-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time, without a clear way to aggregate the results, including confidence bands, of multiple events. This is where TWFE is coming in. In recent years,an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, in particular, multiple time periods and heterogenous or dynamic treatment effects, the estimator delivered biased results). We use the implementation of the corrected version of the TWFE estimator of Callaway & Sant'Anna (2021). It is only available in R. It estimates
 
 
 4) Aggregated Fixed Effects Difference-in-Differences Analysis

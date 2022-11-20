@@ -84,8 +84,7 @@ We next employ the Synthetic Control Method ("SCM") to analyze the effect of the
 
 PLOT
 
-Interpretation: In the pre-treatment period the outcome variable, average sales per postal code area (CHECK) of the synthetic city matches the value of the actual city closely.
-
+Descrpition and interpretation: In the pre-treatment period the outcome variable, average sales per postal code area (CHECK) of the synthetic city matches the value of the actual city closely. Then, as the showroom opens, the two series diverge visibly, suggesting a positive impact of the showroom on online sales in the area around the showroom, the absolute treatment effect is then simply the difference between the actual value and the synthetic value. We obtain the percentage increase by dividing the average quarterly increase over the 24 months after the showroom opening by the value in the final quarter before treatment. Averaging over all showroom openings in our sample, the analysis suggests an increase of online sales of around 20% (CHECK).
 
 
 #### Two-way Fixed-effects Difference-in-Difference
@@ -137,6 +136,11 @@ Input here the computer on estimated revenue
 
 
 The results on the impact of opening additional showrooms is to be set in relation to the costs to compute the marketing ROI. This needs to be compared to the ROI of alternative marketing strategies, in particular, performance-marketing.
+
+
+Potential follow-ons: channels, other outcome variables, euro-figures for potential showrooms in cities not served by showrooms yet.
+
+Talk about long-term vs. short-term: question: do initial gains consolidate, reverse or continue to grow?
 
 
 ## Overview

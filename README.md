@@ -20,6 +20,9 @@ Note: The Core data used for this project is confidential, hence any information
 
 ## Table of Contents
 
+1. [Description](## Description)
+2. [Objective](###Objective)
+
 
 https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents
 

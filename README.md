@@ -22,7 +22,7 @@ Note: The Core data used for this project is confidential, hence any information
 
 1. [Description](##Description)
 2. [Objective](###Objective)
-[Event-study Difference-in-Differences with K-Nearest Neighbors](####Paragraph4)
+3. [Event-study Difference-in-Differences with K-Nearest Neighbors](####Paragraph4)
 
 
 https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents

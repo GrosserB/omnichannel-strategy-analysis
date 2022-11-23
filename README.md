@@ -20,8 +20,9 @@ Note: The Core data used for this project is confidential, hence any information
 
 ## Table of Contents
 
-1. [Description](## Description)
+1. [Description](##Description)
 2. [Objective](###Objective)
+3. [Event-study Difference-in-Differences with K-Nearest Neighbors](####Paragraph4)
 
 
 https://stackoverflow.com/questions/11948245/markdown-to-create-pages-and-table-of-contents
@@ -32,8 +33,9 @@ https://github.com/ekalinin/github-markdown-toc
 
 
 
-## Description
-### Objective
+## Description <a name="Description"></a>
+### Objective <a name="Objective"></a>
+
 
 Fundamentally,
 One of the central marketing challenges is to decide on the spending on different channels to optimize overall sales but knowing the ROI of different channels is challenging.
@@ -60,7 +62,7 @@ PLOT "Pandemic_Growth_by_PopulationDensity"
 
 To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods.
 
-#### Event-study Difference-in-Differences with K-Nearest Neighbors
+#### Event-study Difference-in-Differences with K-Nearest Neighbors <a name="Paragraph4"></a>
 
 First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e. to SHOW what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match treated each postal code area with TWO other postal code areas using nearest neighbor matching based on on the variables (i) population density, (ii) average credit quality and (iii) total online sales in 2015-Q1, the first quarter in our sample. In a multivariate regression, these three variables explain about 70% of the cross-sectional variation in the final quarter of our sample. We match two instead of just one control postal code to each treatment postal code to increase the sample size and thereby reduce the standard errors in our estimation.
 

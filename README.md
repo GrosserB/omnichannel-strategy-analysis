@@ -6,7 +6,6 @@ This project uses confidential online sales data from a Berlin-based e-commerce 
 <p align="center">
 <img src="./output/ATT_Aggregated.jpg" width="450" height="300"/>
 </p>
-
 *These results show the average difference-in-difference estimators at the lenght of exposure in quarters*
 
 

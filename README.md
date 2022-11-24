@@ -6,15 +6,16 @@ This project uses confidential online sales data from a Berlin-based e-commerce 
 <p align="center">
 <img src="./output/ATT_Aggregated.jpg" width="450" height="300"/>
 </p>
-*These results show the average difference-in-difference estimators at the lenght of exposure in quarters*
+
+*This plot shows the aggregated difference-in-difference estimators of online sales around the opening *
 
 
 **Authors**:
-Benjamin Grosse-Rueschkamp, [LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)
 
+Benjamin Grosse-Rueschkamp, [LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)
 Michael Dietrich, Linkedin, Github
 
-Note: The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress.
+**Note**: The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress.
 
 
 ## Table of Contents

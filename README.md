@@ -3,10 +3,7 @@
 ## Summary
 This project uses confidential online sales data from a Berlin-based e-commerce firm to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods, nearest neighbor matching, and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a showroom increases online sales in the area surrounding the showroom by 7-20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of the range. In combination with the costs of operating these stores, the "Showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
 
-
-"
-![Aggregated Difference-in-Differences Plot]<img src="./output/ATT_Aggregated.jpg" width="600" height="600" class="center" />
-"
+<img src="./output/ATT_Aggregated.jpg" width="600" height="400" class="center" />
 
 *These results show the average difference-in-difference estimators at the lenght of exposure in quarters*
 

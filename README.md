@@ -10,6 +10,17 @@ This project uses confidential online sales data from a Berlin-based e-commerce 
 </p>
 
 *This plot shows the aggregated difference-in-difference estimators of online sales around the opening*
+
+<br>
+<br>
+
+**Authors**: <br>
+Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)) <br>
+Michael Dietrich (Linkedin, Github) <br>
+<br>
+
+**Note**: <br>
+The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress. <br>
 <br />
 <br />
 **Authors**: <br />

@@ -7,16 +7,17 @@ This project uses confidential online sales data from a Berlin-based e-commerce 
 <img src="./output/ATT_Aggregated.jpg" width="450" height="300"/>
 </p>
 
-*This plot shows the aggregated difference-in-difference estimators of online sales around the opening *
+*This plot shows the aggregated difference-in-difference estimators of online sales around the opening*
+<br>
+<br>
 
+**Authors**: <br>
+Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)) <br>
+Michael Dietrich (Linkedin, Github) <br>
+<br>
 
-**Authors**:
-
-Benjamin Grosse-Rueschkamp, [LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)
-Michael Dietrich, Linkedin, Github
-
-**Note**: The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress.
-
+**Note**: <br>
+The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress. <br>
 
 ## Table of Contents
 - [Evaluation of Omnichannel Strategy at Berlin-based E-Commerce Company: Do Offline Showrooms Increase Online Sales? -- WORK IN PROGRESS --](#evaluation-of-omnichannel-strategy-at-berlin-based-e-commerce-company-do-offline-showrooms-increase-online-sales----work-in-progress---)

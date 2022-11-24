@@ -18,7 +18,7 @@ Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingross
 Michael Dietrich ([LinkedIn](https://www.linkedin.com/in/m-dietrich/), [Github](https://github.com/mihyael)) <br>
 
 **Note**: <br>
-The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress. <br>
+The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
 <br />
 
 

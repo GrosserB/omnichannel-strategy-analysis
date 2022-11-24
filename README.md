@@ -11,8 +11,9 @@ This project uses confidential online sales data from a Berlin-based e-commerce 
 
 
 **Authors**:
-Benjamin Grosse-Rueschkamp, *Linkedin: https://www.linkedin.com/in/benjamingrosserueschkamp, Github: https://github.com/GrosserB*
-Michael Dietrich, Linkedin:, Github:
+Benjamin Grosse-Rueschkamp, [LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)
+
+Michael Dietrich, Linkedin, Github
 
 Note: The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress.
 

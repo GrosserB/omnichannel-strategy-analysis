@@ -2,21 +2,26 @@
 
 ## Summary
 This project uses confidential online sales data from a Berlin-based e-commerce firm to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by 7-20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of the range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
+<br />
+<br />
 
 <p align="center">
 <img src="./output/ATT_Aggregated.jpg" width="450" height="300"/>
 </p>
 
 *This plot shows the aggregated difference-in-difference estimators of online sales around the opening*
-
-
-
-**Authors**:
-Benjamin Grosse-Rueschkamp, [LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)
+<br />
+<br />
+**Authors**: <br />
+Benjamin Grosse-Rueschkamp, [LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB) <br />
 Michael Dietrich, Linkedin, Github
 
-**Note**: The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress.
+<br />
+<br />
 
+**Note**: <br />
+The Core data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictional. This project is work-in-progress.
+<br />
 
 ## Table of Contents
 - [Evaluation of Omnichannel Strategy at Berlin-based E-Commerce Company: Do Offline Showrooms Increase Online Sales? -- WORK IN PROGRESS --](#evaluation-of-omnichannel-strategy-at-berlin-based-e-commerce-company-do-offline-showrooms-increase-online-sales----work-in-progress---)

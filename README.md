@@ -5,7 +5,7 @@ This project uses confidential online sales data from a Berlin-based e-commerce 
 
 
 "
-![Aggregated Difference-in-Differences Plot](./output/image_name.png)
+![Aggregated Difference-in-Differences Plot](./output/ATT_Aggregated.png)
 "
 
 *These results show the average difference-in-difference estimators at the lenght of exposure in quarters*

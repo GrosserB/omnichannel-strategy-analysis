@@ -8,7 +8,7 @@ This project for a Berlin-based e-commerce firm uses confidential online sales d
 <p align="center">
 <img src="./output/ATT_Aggregated.jpg" width="450" height="300"/>
 
- <font size=”7”> *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened (red: year-quarters before the opening, green: year-quarters after the opening). The average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.* </font>
+ <font size=”6”> *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened (red: year-quarters before the opening, green: year-quarters after the opening). The average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.* </font>
 </p>
 
 <br>

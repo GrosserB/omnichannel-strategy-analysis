@@ -1,4 +1,4 @@
-# Analysis of Omnichannel Marketing Strategy: Do Offline Showrooms Increase Online Sales? *(WORK IN PROGRESS)*
+# Analysis of Omnichannel Marketing Strategy: Do Offline Showrooms Increase Online Sales? *(Work-in-Progress)*
 
 ## Summary
 This project for a Berlin-based e-commerce firm uses confidential online sales data to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by 7-20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of the range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
@@ -9,9 +9,11 @@ This project for a Berlin-based e-commerce firm uses confidential online sales d
 <img src="./output/ATT_Aggregated.jpg" width="450" height="300"/>
 </p>
 
-*This plot shows the aggregated difference-in-difference estimators of online sales around the opening*
+*This chart shows the evolution of online sales in the year-quarters around the opening of a showroom for the areas neighboring the showroom relative to control group areas with no showroom (red: before the opening, green: after the opening). The average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.*
+
 <br>
 <br>
+
 
 **Authors**: <br>
 Michael Dietrich ([LinkedIn](https://www.linkedin.com/in/m-dietrich/), [Github](https://github.com/mihyael)) <br>
@@ -113,6 +115,19 @@ Descrpition and interpretation: In the pre-treatment period the outcome variable
 #### Two-way Fixed-effects Difference-in-Difference
 
 In the first section, we use the standard (or event study-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time, without a clear way to aggregate the results, including confidence bands, of multiple events. This is where TWFE is coming in. In recent years,an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, in particular, multiple time periods and heterogenous or dynamic treatment effects, staggered the estimator delivered biased results). We use the implementation of the corrected version of the TWFE estimator of Callaway & Sant'Anna (2021). It is only available in R. The package runs the following fixed effects regression: LATEX where the variables are defined as in (LINK)
+
+shows the effect of showroom opening on online sales. It plots the difference-in-differences parameters of regressions of online sales on the interaction term of Treatment Group and Year-Quarter indicator variables along its 95%-confidence bands. These values aggregated over all showrooms in our sample. It thus shows the relative development of online sales
+
+
+
+group-time effect difference-in-difference estimators of online sales around the opening of showrooms, aggregated over all showroom openings in our sample.
+
+The
+
+
+ *
+
+
 
 
 PLOT

@@ -1,7 +1,7 @@
-# Evaluation of Omnichannel Strategy: Do Offline Showrooms Increase Online Sales? (WORK IN PROGRESS)
+# Analysis of Omnichannel Strategy: Do Offline Showrooms Increase Online Sales? (WORK IN PROGRESS)
 
 ## Summary
-This project uses confidential online sales data from a Berlin-based e-commerce firm to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by 7-20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of the range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
+This project for a Berlin-based e-commerce firm uses confidential online sales data to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by 7-20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of the range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
 <br />
 <br />
 
@@ -14,8 +14,8 @@ This project uses confidential online sales data from a Berlin-based e-commerce 
 <br>
 
 **Authors**: <br>
-Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)) <br>
 Michael Dietrich ([LinkedIn](https://www.linkedin.com/in/m-dietrich/), [Github](https://github.com/mihyael)) <br>
+Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)) <br>
 
 **Note**: <br>
 The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
@@ -149,7 +149,7 @@ what are threats/potential limitations
 As with all approaches to causal inference on non-experimental data, valid conclusions require strong assumptions. This method assumes that the outcome of the treated unit can be explained in terms of a set of control units that were themselves not affected by the intervention. Furthermore, the relationship between the treated and control units is assumed to remain stable during the post-intervention period. Including only control units in your dataset that meet these assumptions is critical to the reliability of causal estimates.
 
 
-### So-What
+### Conclusion: "So-What"
 
 Input here the computer on estimated revenue
 
@@ -160,6 +160,8 @@ The results on the impact of opening additional showrooms is to be set in relati
 Potential follow-ons: channels, other outcome variables, euro-figures for potential showrooms in cities not served by showrooms yet.
 
 Talk about long-term vs. short-term: question: do initial gains consolidate, reverse or continue to grow?
+
+
 
 
 ## Overview
@@ -176,35 +178,11 @@ Thanking the anonymous Berlin-based e-commerce company
 
 
 
-## Detailed Project Description
+## Detailed Setup and Preprocessing Description
 
 ### Overview
 
 All parts of the analysis are documented in the jupyter notebook `Main_Project_Notebook.ipynb` together with step-by-step explanations of methods. We provided an example dataset that serves as a basis to explain our approach. It can also be used by anyone to replicate our results.
-
-Disclaimer: Due to confidentiality reasons, the data and final results shown in this project have been significantly altered. Nevertheless, the findings and methods presented here are, generally speaking, a proof of concept, but have been applied successfully to the original dataset.
-
-In this package we made extensive use of [OscarEngelbrektson / SyntheticControlMethods](https://github.com/OscarEngelbrektson/SyntheticControlMethods). We are very grateful for all the work that has been put into those packages.
-
-
-### Objectives
-
-As mentioned in the Introduction, the goal of our analysis was to determine and measure the effect of physical stores on the online sales of an online retailer.
-
-At the heart of our analysis lay the question: 'Do physical stores have a positive impact on online sales?' 'Do physical stores increase the online sales in a given city?'
-
-
-### Methods Used
-
-To answer this question, it is imperative to not only rely on classical methods of statistical inference, that usually only achieve insights into correlation of certain phenomena. But to convincingly portray the causal relationship of the matter at hand: between the opening of a store and a possible increase of online sales.
-
-For this purpose, we ...
-
-`More Detailed Explanation of Causal Inference`
-
-- Synthetic Control Method
-- Alternatve Control Group
-- ...
 
 
 ### Installation
@@ -234,9 +212,7 @@ Also, the original project used Google's Cloud Storage and BigQuery to store and
 
 
 ------------------------------------
-# Bootcamp Legacy Contents
-
-# Startup the project
+# Project setup
 
 The initial setup.
 

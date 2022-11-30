@@ -55,33 +55,33 @@ The data used for this project is confidential, hence any information shown here
 
 
 ## Description
-### Objective
+### Marketing Attribution Objective & Causal Inference Challenge
 
 Omnichannel marketing is fast becoming a central pillar in any marketing strategy. In particular, e-commerce companies increasingly use brick-and-mortar showrooms to not only showcase the product in real-life but also to create brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall marketing ROI. Obtaining these estimates for the showroom channel is the objective of this project. <br>
 
-We collaborate with a Berlin-based e-commerce companym to analyze and quantify the causal impact of their brick-and-mortar showrooms on online sales. We are provided confidential order data of every order made during our sample period. Several new showrooms are opened during that time period. The showrooms provide product and brand information offline but both order process and fulfillment are online (with few exceptions).<br>
+We collaborate with a Berlin-based e-commerce company to analyze and quantify the causal impact of their brick-and-mortar showrooms on online sales. We are provided confidential order data of every order made during our sample period. Several new showrooms are opened during that time period. The showrooms provide product and brand information offline but both order process and fulfillment are online. Conceptually, we solve the marketing attribution problem using methods from the causal inference toolkit. <br>
 
-Conceptually, we solve the marketing attribution problem by using methods from the causal inference toolkit, detailed below. <br>
+The challenge is to ensure that we don't misinterpret mere correlations as causal relationships, but instead recover as accurate as possible the true underlying parameters. The fundamental idea behind the analysis is to view the opening of new showrooms as a number of geographically-separated quasi-experiments. This allows us to construct treatment and control groups. In the treatment group are customers that are geographically close to a newly opened store and thus are exposed to the showroom channel with some probability. In the control group are locations that further away from showrooms and thus less likely to be affected to this marketing channel. <br>
+
+A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). In particular, all showrooms are located in urban areas but consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. During covid lockdowns, for example,  urban and rural consumer behavior was impacted differently. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions. <br>
+
+<p align="center">
+<img src="./output/Pandemic_Growth_by_PopulationDensity.jpg" width="500" height="350"/>
+</p>
+
+*brief description of plot*
+
 <br>
 
+To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods. <br>
+<br>
 
 ### Analyses & Results
 
-#### Data and Introduction
+#### Data Preprocessing
 
-We start by cleaning and preprocessing of the data (LINK). We aggregate online sales data on the year-quarter level. We also aggregate sales on postal code area level, and geocode the location of the showrooms and of each postal code. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period as some showrooms had opened before. We additionally augment the dataset with the average population density and credit score of the postal code area (LINK TO DATA DESCRIPTION).
+We start by cleaning and preprocessing of the data. On the time dimension, online sales data is aggregated on the year-quarter level. We additionally aggregate sales data on the postal code area level. The location of the showrooms and of each postal code is geocoded. We then computed the distance between each showroom-postal code pair. We define areas as treated if their location is <50km from a showroom that opened during our sample period, as some showrooms had opened before. We additionally augment the dataset with the  population density and average credit score of the postal code area.
 
-The challenge - as usual with causal inference - is to ensure that we don't misinterpret mere correlations as causal relationships, but instead recover as accurate as possible the "true" parameters. A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). For example, all showrooms are located in urban areas. At the same time, consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. For example, the covid lockdowns impacted urban and rural consumer behavior in different ways. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions.
-
-
-The fundamental idea behind the analysis is to view the opening of new showrooms as geographically separated quasi-experiments. This allows us to construct treatment and control groups. In the treatment group are customers that are geographically close to a newly opened store and thus are exposed to the showroom channel with some probability. In the control group are locations that further away from showrooms and thus less likely to be affected to this marketing channel.We take further measures, detailed below,
-
-
-
-PLOT "Pandemic_Growth_by_PopulationDensity"
-*brief description of plot*
-
-To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods.
 
 #### Event-study Difference-in-Differences with K-Nearest Neighbors
 

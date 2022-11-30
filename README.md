@@ -66,10 +66,10 @@ The challenge is to ensure that we don't misinterpret mere correlations as causa
 A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). In particular, all showrooms are located in urban areas but consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. During covid lockdowns, for example,  urban and rural consumer behavior was impacted differently. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions. <br>
 
 <p align="center">
-<img src="./output/Pandemic_Growth_by_PopulationDensity.jpg" width="500" height="350"/>
+<img src="./output/Pandemic_Growth_by_PopulationDensity.png" width="500" height="350"/>
 </p>
 
-*brief description of plot*
+*Online sales growth during the covid-19 pandemic across population density quantiles: more densely populated areas increased their online order volume at a higher rate*
 
 <br>
 

@@ -69,8 +69,8 @@ A particular concern in this setting are potentially hidden factors that impact 
 <p align="center">
 <img src="./output/Pandemic_Growth_by_PopulationDensity.png" width="400" height="400"/>
 </p>
-*Online sales growth during the covid-19 pandemic across population density quantiles. Clearly, more densely populated areas increased their online order volume at a higher rate*
 
+*Online sales growth during the covid-19 pandemic across population density quantiles. Clearly, more densely populated areas increased their online order volume at a higher rate* <br>
 <br>
 
 To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods. <br>

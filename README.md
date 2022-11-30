@@ -1,7 +1,7 @@
 # Analysis of Omnichannel Marketing Strategy: Do Offline Showrooms Increase Online Sales? *(Work-in-Progress)*
 
 ## Summary
-This project for a Berlin-based e-commerce firm uses confidential online sales data to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by 7-20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of the range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
+This project for a Berlin-based e-commerce firm uses confidential online sales data to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by between 7% and 20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of that range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
 <br />
 <br />
 
@@ -22,7 +22,7 @@ Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingross
 
 **Note**: <br>
 The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
-<br />
+<br/>
 
 
 ## Table of Contents
@@ -57,18 +57,13 @@ The data used for this project is confidential, hence any information shown here
 ## Description
 ### Objective
 
+Omnichannel marketing is fast becoming a central pillar in any marketing strategy. In particular, e-commerce companies increasingly use brick-and-mortar showrooms to not only showcase the product in real-life but also to create brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall marketing ROI. Obtaining these estimates for the showroom channel is the objective of this project. <br>
 
-Fundamentally,
-One of the central marketing challenges is to decide on the spending on different channels to optimize overall sales but knowing the ROI of different channels is challenging.
+We collaborate with a Berlin-based e-commerce companym to analyze and quantify the causal impact of their brick-and-mortar showrooms on online sales. We are provided confidential order data of every order made during our sample period. Several new showrooms are opened during that time period. The showrooms provide product and brand information offline but both order process and fulfillment are online (with few exceptions).<br>
 
-Product and brand information offline, but filfillment online (with some exceptions, see outlets)
+Conceptually, we solve the marketing attribution problem by using methods from the causal inference toolkit, detailed below. <br>
+<br>
 
-uncertainty of buying online
-
-What is the question? Why does it matter?
--> in essence, a marketing-attribution problem, central to marketing/sales strategy,
-
-Does the opening of showrooms increase online sales?
 
 ### Analyses & Results
 
@@ -77,6 +72,11 @@ Does the opening of showrooms increase online sales?
 We start by cleaning and preprocessing of the data (LINK). We aggregate online sales data on the year-quarter level. We also aggregate sales on postal code area level, and geocode the location of the showrooms and of each postal code. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period as some showrooms had opened before. We additionally augment the dataset with the average population density and credit score of the postal code area (LINK TO DATA DESCRIPTION).
 
 The challenge - as usual with causal inference - is to ensure that we don't misinterpret mere correlations as causal relationships, but instead recover as accurate as possible the "true" parameters. A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). For example, all showrooms are located in urban areas. At the same time, consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. For example, the covid lockdowns impacted urban and rural consumer behavior in different ways. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions.
+
+
+The fundamental idea behind the analysis is to view the opening of new showrooms as geographically separated quasi-experiments. This allows us to construct treatment and control groups. In the treatment group are customers that are geographically close to a newly opened store and thus are exposed to the showroom channel with some probability. In the control group are locations that further away from showrooms and thus less likely to be affected to this marketing channel.We take further measures, detailed below,
+
+
 
 PLOT "Pandemic_Growth_by_PopulationDensity"
 *brief description of plot*

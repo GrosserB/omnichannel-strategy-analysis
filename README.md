@@ -63,14 +63,14 @@ We collaborate with a Berlin-based e-commerce company to analyze and quantify th
 
 The challenge is to ensure that we don't misinterpret mere correlations as causal relationships, but instead recover as accurate as possible the true underlying parameters. The fundamental idea behind the analysis is to view the opening of new showrooms as a number of geographically-separated quasi-experiments. This allows us to construct treatment and control groups. In the treatment group are customers that are geographically close to a newly opened store and thus are exposed to the showroom channel with some probability. In the control group are locations that further away from showrooms and thus less likely to be affected to this marketing channel. <br>
 
-A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). In particular, all showrooms are located in urban areas but consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. During covid lockdowns, for example,  urban and rural consumer behavior was impacted differently. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions. <br>
+A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). In particular, all showrooms are located in urban areas. However, consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. During covid lockdowns, for example,  urban and rural consumer behavior was impacted differently. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions. <br>
 <br>
 
 <p align="center">
 <img src="./output/Pandemic_Growth_by_PopulationDensity.png" width="400" height="400"/>
 </p>
 
-*Online sales growth during the covid-19 pandemic across population density quantiles. Clearly, more densely populated areas increased their online order volume at a higher rate* <br>
+*Online sales growth during the covid-19 pandemic across population density quantiles. More densely populated areas increased their online order volume at a higher rate during the pandemic* <br>
 <br>
 
 To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods. <br>

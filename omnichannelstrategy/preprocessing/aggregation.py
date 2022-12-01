@@ -4,7 +4,7 @@ import pandas as pd
 # for `df.complete` method?
 # import janitor
 
-from multichannelstrategy.main.utils import substitute_order_value_on_return
+from omnichannelstrategy.main.utils import substitute_order_value_on_return
 
 # Function to Aggregate the Treated Data over Postal Code and Order Date Quarter
 def aggregate_treated_df(df: pd.DataFrame, df_stores: pd.DataFrame) -> pd.DataFrame:

@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 
-from multichannelstrategy.data_sources.big_query import get_bq_data, save_to_bq
-from multichannelstrategy.data_sources.local_disk import get_local_parquet
+from omnichannelstrategy.data_sources.big_query import get_bq_data, save_to_bq
+from omnichannelstrategy.data_sources.local_disk import get_local_parquet
 
 
 def load_data(table: str=None,

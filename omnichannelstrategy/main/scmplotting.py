@@ -22,7 +22,7 @@ class CustomPlot(object):
         #Extract Synthetic Control
         synth = data.synth_outcome
         ### NOTICE ###
-        time = data.dataset[data.time].unique().to_numpy
+        time = data.dataset[data.time].unique()##.to_numpy
         ### plot function has problems with this being a pandas array, so we convert it into numpy array (2022/11/17)
 
         plt = self._get_plotter()

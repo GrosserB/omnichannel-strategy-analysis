@@ -32,8 +32,8 @@ termcolor
 ipykernel
 
 # data processing
-pyarrow
-pyspark
+#pyarrow
+#pyspark
 pygeohash
 pandas-gbq
 haversine
@@ -43,3 +43,4 @@ statsmodels
 linearmodels
 pyjanitor
 googlemaps
+SyntheticControlMethods

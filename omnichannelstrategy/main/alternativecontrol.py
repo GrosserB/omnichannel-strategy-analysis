@@ -3,7 +3,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 from sklearn.neighbors import NearestNeighbors
-from multichannelstrategy.preprocessing.syntheticcontrol import get_before_after_opening_quarters
+from omnichannelstrategy.preprocessing.syntheticcontrol import get_before_after_opening_quarters
 
 def get_nearest_neigbors(df_input, num_neighbors=1, earliest_qt_column='order_value_2013Q2'):
 

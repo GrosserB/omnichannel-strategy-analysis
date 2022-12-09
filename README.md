@@ -99,16 +99,10 @@ Before the opening of the showroom, online sales grow at similar rates in treatm
 To analyze the effect of the showroom opening more rgiorously, we next run an event-style difference-in-differences regression: <br>
 
 <p align="center">
-<img src="./output/DiD_City1.png" width="500" height="300"/>
+<img src="./output/DiD_City1.png" width="400" height="600"/>
 </p>
 
-The tables show the results of the following linear regression $ln(order value) = alpha + beta Treatment_x_Post$
-
-
-
-
-
-REGRESSION EQUATION IN LATEX
+The tables show the results of the following linear regression $$ln(order value) = alpha + beta Treatment_x_Post$$
 
 
 

@@ -115,10 +115,10 @@ The results for the other showrooms are (mostly) similar in magnitude and statis
 
 #### Synthetic Control Method
 
-We next employ the Synthetic Control Method ("SCM") to analyze the effect of the showroom opening online sales. Similarly to the previous methodology, SCM employs a control group as counterfactual, and uses the Post-treatment periods to estimate the treatment effect. The major difference lies in how the control group is constructed. SCM selects weights to construct a synthetic version of the treated unit such that the outcome in the pre-treatment periods matches the outcome of the treated unit as closely as possible. In contrast to DiD, only one aggregated version of the treated unit exists so no parameters or standard errors are estimated. Instead, the difference between the actual outcome and the synthetic outcome represents the treatment effect estimate. <br>
+We next employ the Synthetic Control Method ("SCM") to analyze the effect of the showroom opening online sales. Similarly to the previous methodology, SCM employs a control group as counterfactual, and uses the Post-treatment periods to estimate the treatment effect. The major difference lies in how the control group is constructed. SCM selects weights to construct a synthetic version of the treated unit such that the outcome in the pre-treatment periods matches the outcome of the treated unit as closely as possible. In contrast to difference-in-differences, only one (aggregate) version of the treated and control unit exists. The treatment effect in absolute numbers is the difference between the treatment area and the synthetic control area.
 
 <p align="center">
-<img src="./output/SCM_City1.png" width="400" height="600"/>
+<img src="./output/SCM_City1.png" width="500" height="300"/>
 </p>
 
 

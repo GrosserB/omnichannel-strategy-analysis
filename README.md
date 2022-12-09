@@ -6,10 +6,10 @@ This project for a Berlin-based e-commerce firm uses confidential online sales d
 <br />
 
 <p align="center">
-<img src="./output/KNN_Match_City1.png" width="600" height="450"/>
+<img src="./output/KNN_Match_City1.png" width="600" height="400"/>
 </p>
 
- *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened. The online sales for both areas are indexed on the opening quarter (green: showroom red: no showroom)*
+ *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened. The online sales for both areas are indexed on the opening quarter (green: showroom "city 1", red: KNN-matched areas with no showroom)*
 
 
 <br>

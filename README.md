@@ -6,10 +6,10 @@ This project for a Berlin-based e-commerce firm uses confidential online sales d
 <br />
 
 <p align="center">
-<img src="./output/ATT_Aggregated.jpg" width="500" height="350"/>
+<img src="./output/KNN_Match_city1.jpg" width="500" height="350"/>
 </p>
 
- *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened (red: year-quarters before the opening, green: year-quarters after the opening). The average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.*
+ *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened. The online sales for both areas are indexed on the opening quarter (green: showroom red: no showroom)
 
 
 <br>
@@ -119,7 +119,11 @@ In the first section, we use the standard (or event study-style) difference-in-d
 
 shows the effect of showroom opening on online sales. It plots the difference-in-differences parameters of regressions of online sales on the interaction term of Treatment Group and Year-Quarter indicator variables along its 95%-confidence bands. These values aggregated over all showrooms in our sample. It thus shows the relative development of online sales
 
+<p align="center">
+<img src="./output/ATT_Aggregated.jpg" width="500" height="350"/>
+</p>
 
+ *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened (red: year-quarters before the opening, green: year-quarters after the opening). The average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.*
 
 group-time effect difference-in-difference estimators of online sales around the opening of showrooms, aggregated over all showroom openings in our sample.
 

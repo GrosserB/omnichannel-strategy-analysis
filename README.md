@@ -6,10 +6,10 @@ This project for a Berlin-based e-commerce firm uses confidential online sales d
 <br />
 
 <p align="center">
-<img src="./output/ATT_Aggregated.jpg" width="500" height="350"/>
+<img src="./output/KNN_Match_City1.png" width="600" height="400"/>
 </p>
 
- *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened (red: year-quarters before the opening, green: year-quarters after the opening). The average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.*
+  *This chart shows online sales for the areas neighboring a showroom relative to matched control areas where no showroom opened. The online sales for both areas are indexed on the opening year-quarter (green: showroom "city 1", red: KNN-matched areas with no showroom)*
 
 
 <br>
@@ -21,7 +21,7 @@ Michael Dietrich ([LinkedIn](https://www.linkedin.com/in/m-dietrich/), [Github](
 Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)) <br>
 
 **Note**: <br>
-The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
+The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location, opening dates, or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
 <br/>
 
 
@@ -57,13 +57,13 @@ The data used for this project is confidential, hence any information shown here
 ## Description
 ### Marketing Attribution Objective & Causal Inference Challenge
 
-Omnichannel marketing is fast becoming a central pillar in any marketing strategy. In particular, e-commerce companies increasingly use brick-and-mortar showrooms to not only showcase the product in real-life but also to create brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall marketing ROI. Obtaining these estimates for the showroom channel is the objective of this project. <br>
+Omnichannel marketing is fast becoming a central pillar in B2C marketing. In particular, e-commerce companies increasingly use brick-and-mortar showrooms to not only showcase the product in real-life but also to create brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall marketing ROI. Obtaining these estimates for the showroom channel is the objective of this project. <br>
 
 We collaborate with a Berlin-based e-commerce company to analyze and quantify the causal impact of their brick-and-mortar showrooms on online sales. We are provided confidential order data of every order made during our sample period. Several new showrooms are opened during that time period. The showrooms provide product and brand information offline but both order process and fulfillment are online. Conceptually, we solve the marketing attribution problem using methods from the causal inference toolkit. <br>
 
-The challenge is to ensure that we don't misinterpret mere correlations as causal relationships, but instead recover as accurate as possible the true underlying parameters. The fundamental idea behind the analysis is to view the opening of new showrooms as a number of geographically-separated quasi-experiments. This allows us to construct treatment and control groups. In the treatment group are customers that are geographically close to a newly opened store and thus are exposed to the showroom channel with some probability. In the control group are locations that further away from showrooms and thus less likely to be affected to this marketing channel. <br>
+The challenge is to ensure that we don't misinterpret mere correlations as causal relationships but instead recover as accurate as possible the true underlying parameters. The fundamental idea behind the analysis is to view the opening of new showrooms as a number of geographically separated quasi-experiments. This allows us to construct treatment and control groups. In the treatment group are customers that are geographically close to a newly opened store and thus are exposed to the showroom channel with some probability. In the control group are locations that further away from showrooms and thus less likely to be affected to this marketing channel. <br>
 
-A particular concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). In particular, all showrooms are located in urban areas. However, consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. During covid lockdowns, for example,  urban and rural consumer behavior was impacted differently. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions. <br>
+A particular methodological concern in this setting are potentially hidden factors that impact sales and that are also correlated to treatment ("omitted variable bias"). In particular, all showrooms are located in urban areas. However, consumers in urban areas may exhibit differential online shopping behaviors compared to consumers in rural areas even in the absence of treatment. During covid lockdowns, for example,  urban and rural consumer behavior was impacted differently. Therefore, naive comparisons of online sales in areas with showrooms vs. those without, or simple before-after comparisons are likely to be biased and would lead to misleading conclusions. <br>
 <br>
 
 <p align="center">
@@ -80,46 +80,67 @@ To tackle these challenges and obtain robust estimates, we employ three state-of
 
 #### Data Preprocessing
 
-We start by cleaning and preprocessing of the data. In the time dimension, online sales data is aggregated on the year-quarter level. On the geographic dimension, we additionally aggregate sales data on the postal code level. The location of the showrooms and of each postal code is geocoded. We then computed the distance between each showroom-postal code pair. We define areas as treated if their location is <50km from a showroom that opened during our sample period, as some showrooms had opened before. We additionally augment the dataset with the population density (from public sources) and average credit score of the postal code area (provided to us by the ecommerce firm).
+We start by cleaning and preprocessing of the data. In the time dimension, online sales data is aggregated on the year-quarter level. On the geographic dimension, we additionally aggregate sales data on the postal code level. The location of the showrooms and of the postal codes are geocoded. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period, as some showrooms had opened before. We additionally augment the dataset with the population density (from public sources) and average credit score of the postal code area (provided to us by the ecommerce firm). <br>
 
 
 #### Event-study Difference-in-Differences with K-Nearest Neighbors
 
-First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e. to SHOW what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match treated each postal code area with two other postal code areas using nearest neighbor matching based on on the variables (i) population density, (ii) average credit quality and (iii) total online sales of the very first time period in our data. In a multivariate regression, these three variables explain about 70% of the cross-sectional variation in the final quarter of our sample. We match two instead of just one control postal code to each treatment postal code to increase the sample size and thereby reduce the standard errors in our estimation.
+First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e., what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match treated each postal code area with two other postal code areas using nearest neighbor matching based on on the variables (i) population density, (ii) average credit quality and (iii) total online sales of the very first time period in our data. In a multivariate regression, these three variables explain about 70% of the cross-sectional variation. We match two instead of just one control postal code to each treatment postal code to increase the sample size and thereby reduce the standard errors in our estimation. <br>
 
 
-1) Plotting online sales in the treated areas vs. those of a matched control group:
+<p align="center">
+<img src="./output/KNN_Match_City1.png" width="600" height="400"/>
+</p>
 
-PLOT
+ *This chart shows online sales for the areas neighboring a showroom relative to matched control areas where no showroom opened. The online sales for both areas are indexed on the opening year-quarter (green: showroom "city 1", red: KNN-matched areas with no showroom)*
 
-Interpretation: before the opening of the showroom, online sales grow at similar rates in treatment and control areas, After the showroom opens, the series diverge and the areas around the showroom increase their online order volume at a faster rate. This simple plot provides first evidence to the effect of the showroom on online sales.
+Before the opening of the showroom, online sales grow at similar rates in treatment and control areas, After the showroom opens, the series diverge and the areas around the showroom increase their online order volume at a faster rate. This simple plot provides first evidence to the effect of the showroom on online sales. <br>
 
-To analyze the effect of the showroom opening in more detail, we next run an event-style difference-in-differences regression:
+To analyze the effect of the showroom opening more rgiorously, we next run an event-style difference-in-differences regression: <br>
 
-SCREENSHOT TABLE
+<p align="center">
+<img src="./output/DiD_City1.png" width="400" height="600"/>
+</p>
 
-The tables show the results of the following linear regression: REGRESSION EQUATION IN LATEX
-where the variable Post is an indicator variable that equals one for all year-quarters after the showoom opened, and zero otherwise. The variable treatment is an indicator variable that equals one for all postal code areas that are within the 50km range around the showroom, and zero for all control postal code areas. Post_x_Treament is the interaction term of the two variables. The dependent (aka "target") variable is the natural logarithm of one plus the quarterly total order value in each postal code area. As the dependent variable is logarized (CHECK), we can interpret the parameter estimate on the interaction term "Post_x_Treated" as the mean percentage change in order volume for the treated units after the opneing of the showroom, relative to the untreated postal code areas. Hence, the estimates for the two showroom openings show an increase of 10% and 12%. Both estimates are statistically significant.
+The table shows the results of the following linear panel regression:<br>
 
+<p align="center">
+<img src="https://latex.codecogs.com/svg.image?\inline&space;\small&space;log(order\&space;value_{it})&space;=&space;\alpha&space;&plus;&space;\beta\&space;&space;\mathit{Treatment_i&space;\times&space;Post_t}&space;&plus;&space;\lambda&space;\mathit{Treatment_i}&space;&plus;&space;\phi&space;\mathit{Post_t}&space;&plus;&space;\vartheta&space;&space;X_{it}&space;&plus;&space;\epsilon_{it}"/>
+ </p>
+
+This is a classical difference-in-differences regression where the variable *Post* is an indicator variable that equals one for all year-quarters after the showoom opened, and zero otherwise; the variable *Treatment* is an indicator variable that equals one for all postal code areas that are within the 50km range around the showroom, and zero for all control postal code areas. *Treatment* $\times$ *Post* is the interaction term of the two variables, and it the variable of interest. The dependent (aka "target") variable is the natural logarithm of the quarterly total order value (in EUR) in each postal code area. As the dependent variable is logarithmized, we can interpret the parameter estimate on the interaction term *Treatment* $\times$ *Post* as the mean percentage change in the dependent variable for the treated units after the opening of the showroom relative to the untreated postal code areas. Hence, the estimates for the showroom openings show an increase of 10.34%. With a p-value of 0.001, the point estimate is highly statistically significant; standard errors are clustered on the postal-code area. <br>
+
+The results for the other showrooms are (mostly) similar in magnitude and statistical significance. <br>
+<br>
 
 #### Synthetic Control Method
 
-We next employ the Synthetic Control Method ("SCM") to analyze the effect of the showroom opening online sales. Similarly to the previous methodology, SCM employs a control group as counterfactual, and uses the Post-treatment periods to estimate the treatment effect. The major difference lies in how the control group is constructed. SCM selects weights to construct a synthetic version of the treated unit such that the outcome in the pre-treatment periods matches the outcome of the treated unit as closely as possible. In contrast to DiD, only one aggregated version of the treated unit exists so no parameters are estimated (CHECK). Instead, the simple difference between the actual outcome and the synthetic outcome represents the treatment effect estimate.
+We next employ the Synthetic Control Method ("SCM") to analyze the effect of the showroom opening online sales. Similarly to the previous methodology, SCM employs a control group as counterfactual, and uses the Post-treatment periods to estimate the treatment effect. The major difference lies in how the control group is constructed. SCM selects weights to construct a synthetic version of the treated unit such that the outcome in the pre-treatment periods matches the outcome of the treated unit as closely as possible. In contrast to difference-in-differences, only one (aggregate) version of the treated and control unit exists. The treatment effect in absolute numbers is the difference between the treatment area and the synthetic control area.
 
-3) Synthetic Control Method
+<p align="center">
+<img src="./output/SCM_City1.png" width="600" height="400"/>
+</p>
 
-PLOT
 
-Descrpition and interpretation: In the pre-treatment period the outcome variable, average sales per postal code area (CHECK) of the synthetic city matches the value of the actual city closely. Then, as the showroom opens, the two series diverge visibly, suggesting a positive impact of the showroom on online sales in the area around the showroom, the absolute treatment effect is then simply the difference between the actual value and the synthetic value. We obtain the percentage increase by dividing the average quarterly increase over the 24 months after the showroom opening by the value in the final quarter before treatment. Averaging over all showroom openings in our sample, the analysis suggests an increase of online sales of around 20% (CHECK).
+In the pre-treatment period the outcome variable, the mean sales per postal code area of the synthetic city matches the value of the actual city closely. As the showroom opens the two series diverge visibly, suggesting a positive impact of the showroom on online sales in the area around the showroom. The absolute treatment effect is the difference between the actual value and the synthetic value (note that the EUR values shown on the y-axis are not the actual values) We obtain the percentage change by dividing the average quarterly increase over the 24 months after the showroom opening by the value in the final quarter before treatment. Averaging over all showroom openings in our sample, the analysis suggests an increase of online sales of 20%. <br>
+<br>
 
 
 #### Two-way Fixed-effects Difference-in-Difference
 
-In the first section, we use the standard (or event study-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time, without a clear way to aggregate the results, including confidence bands, of multiple events. This is where TWFE is coming in. In recent years,an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, in particular, multiple time periods and heterogenous or dynamic treatment effects, staggered the estimator delivered biased results). We use the implementation of the corrected version of the TWFE estimator of Callaway & Sant'Anna (2021). It is only available in R. The package runs the following fixed effects regression: LATEX where the variables are defined as in (LINK)
+In the first section we use the canonical (or 'event study'-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time and it has no "statistically clean" way to aggregate the estimates and confidence bands of multiple events. The so-called Two-Way Fixed Effects regression model ("TWFE") was meant to solve this problem (TWFE
+
+
+
+This is where TWFE is coming in. In recent years,an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, in particular, multiple time periods and heterogenous or dynamic treatment effects, staggered the estimator delivered biased results). We use the implementation of the corrected version of the TWFE estimator of Callaway & Sant'Anna (2021). It is only available in R. The package runs the following fixed effects regression: LATEX where the variables are defined as in (LINK)
 
 shows the effect of showroom opening on online sales. It plots the difference-in-differences parameters of regressions of online sales on the interaction term of Treatment Group and Year-Quarter indicator variables along its 95%-confidence bands. These values aggregated over all showrooms in our sample. It thus shows the relative development of online sales
 
+<p align="center">
+<img src="./output/ATT_Aggregated.jpg" width="500" height="350"/>
+</p>
 
+ *This chart shows the evolution of online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to matched control group areas where no showroom opened (red: year-quarters before the opening, green: year-quarters after the opening). The average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.*
 
 group-time effect difference-in-difference estimators of online sales around the opening of showrooms, aggregated over all showroom openings in our sample.
 

@@ -102,7 +102,7 @@ To analyze the effect of the showroom opening more rgiorously, we next run an ev
 <img src="./output/DiD_City1.png" width="400" height="600"/>
 </p>
 
-The tables show the results of the following linear regression $$ln(order value) = alpha + beta Treatment_x_Post$$
+The tables show the results of the following linear regression $\textit{log(order value) = \alpha + \beta Treatment \times Post}$
 
 
 

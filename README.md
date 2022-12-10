@@ -135,35 +135,12 @@ In the first section we use the canonical (or 'event study'-style) difference-in
 <img src="./output/ATT_Aggregated.jpg" width="500" height="350"/>
 </p>
 
- *This chart shows estimates of the _relative_ online sales of the areas surrounding the showrooms compared to areas with no showroom in the year-quarters before and after the opening of the showrooms (red: year-quarters before the opening, green: year-quarters after the opening). The dots are the point estimates for each year-quarter and the bars represent 95% confidence intervals. For example, in the first quarter after the opening of a showroom, online sales were around 15% higher in the area surrounding the showrooms compared to areas with no showrooms, a number that is statistically significant on the 95% level (as the zero line is not included in the confidence interval). This number is the average over all showrooms that opened in our sample* <br>
+ *This chart shows estimates of the __relative__ online sales of the areas surrounding the showrooms compared to areas with not close to a showroom (red: year-quarters before the opening, green: year-quarters after the opening). The dots are the point estimates for each year-quarter and the bars represent 95% confidence intervals. For example, in the first quarter after the opening of a showroom, online sales increase by around 15% higher. This number is statistically significant on the 95% level (as the zero line is not included in the confidence interval). This number is the average over all showrooms that opened in our sample* <br>
  <br>
 
+While many of the point estimates are individually not statistically distinguishable from zero, the average of all showroom openings over the entire pre- and post period is. The group-time average treatment effect is: the average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.  <br>
+ <br>
 
-
-
-
-
-
-
-The average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.
-
-shows the effect of showroom opening on online sales. It plots the difference-in-differences parameters of regressions of online sales on the interaction term of Treatment Group and Year-Quarter indicator variables along its 95%-confidence bands. These values aggregated over all showrooms in our sample. It thus shows the relative development of online sales
-
-
-
-group-time effect difference-in-difference estimators of online sales around the opening of showrooms, aggregated over all showroom openings in our sample.
-
-The
-
-
- *
-
-
-
-
-PLOT
-
-SCREENSHOT TABLE
 
 
 #### Discussion & Summary of Results

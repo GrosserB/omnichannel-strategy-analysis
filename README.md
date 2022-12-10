@@ -122,17 +122,13 @@ We next employ the Synthetic Control Method ("SCM") to analyze the effect of the
 </p>
 
 
-In the pre-treatment period the outcome variable, the mean sales per postal code area of the synthetic city matches the value of the actual city closely. As the showroom opens the two series diverge visibly, suggesting a positive impact of the showroom on online sales in the area around the showroom. The absolute treatment effect is the difference between the actual value and the synthetic value (note that the EUR values shown on the y-axis are not the actual values) We obtain the percentage change by dividing the average quarterly increase over the 24 months after the showroom opening by the value in the final quarter before treatment. Averaging over all showroom openings in our sample, the analysis suggests an increase of online sales of 20%. <br>
+In the pre-treatment period the outcome variable, the mean sales per postal code area of the synthetic city matches the value of the actual city closely. As the showroom opens the two series diverge visibly, suggesting a positive impact of the showroom on online sales in the area around the showroom. The absolute treatment effect is the difference between the actual value and the synthetic value (note that the EUR values shown on the y-axis are not the actual values) We obtain the percentage change by dividing the average quarterly increase over the 24 months after the showroom opening by the value in the final quarter before treatment. Averaging over the showroom openings in our sample, the analysis suggests an increase of online sales of 20%. <br>
 <br>
 
 
 #### Two-way Fixed-effects Difference-in-Difference
 
-In the first section we use the canonical (or 'event study'-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time and it has no "statistically clean" way to aggregate the estimates and confidence bands of multiple events. The so-called Two-Way Fixed Effects regression model ("TWFE") was meant to solve this problem (TWFE
-
-
-
-This is where TWFE is coming in. In recent years,an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, in particular, multiple time periods and heterogenous or dynamic treatment effects, staggered the estimator delivered biased results). We use the implementation of the corrected version of the TWFE estimator of Callaway & Sant'Anna (2021). It is only available in R. The package runs the following fixed effects regression: LATEX where the variables are defined as in (LINK)
+In the first section we use the canonical (or 'event study'-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time and it has no "statistically clean" way to aggregate the estimates and confidence bands of multiple events. The so-called Two-Way Fixed Effects regression model ("TWFE") had become the standard solution to this problem. However, an emerging scientific literature has pointed out flaws of the original TWFE estimator (in particular, under some conditions, multiple time periods and heterogenous or dynamic treatment effects, staggered the estimator delivered biased results). We use the implementation of the corrected version of the TWFE estimator of Callaway & Sant'Anna (2021). It is only available in R. The package runs the following fixed effects regression: LATEX where the variables are defined as in (LINK)
 
 shows the effect of showroom opening on online sales. It plots the difference-in-differences parameters of regressions of online sales on the interaction term of Treatment Group and Year-Quarter indicator variables along its 95%-confidence bands. These values aggregated over all showrooms in our sample. It thus shows the relative development of online sales
 

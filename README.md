@@ -135,10 +135,9 @@ In the first section we use the canonical (or 'event study'-style) difference-in
 <img src="./output/ATT_Aggregated.jpg" width="500" height="350"/>
 </p>
 
- *This chart shows estimates of the __relative__ online sales of the areas surrounding the showrooms compared to areas with not close to a showroom (red: year-quarters before the opening, green: year-quarters after the opening). The dots are the point estimates for each year-quarter and the bars represent 95% confidence intervals. For example, in the first quarter after the opening of a showroom, online sales increase by around 15% higher. This number is statistically significant on the 95% level (as the zero line is not included in the confidence interval). This number is the average over all showrooms that opened in our sample* <br>
- <br>
+ *This chart shows estimates of the __relative__ online sales of the areas surrounding the showrooms compared to areas with not close to a showroom (red: year-quarters before the opening, green: year-quarters after the opening). The dots are the point estimates for each year-quarter and the bars represent 95% confidence intervals. For example, in the first quarter after the opening of a showroom, online sales increase by around 15% higher. This number is statistically significant on the 95% level (as the zero line is not included in the confidence interval). This number is the average over all showrooms that opened in our sample.* <br>
 
-While many of the point estimates are individually not statistically distinguishable from zero, the average of all showroom openings over the entire pre- and post period is. The group-time average treatment effect is: the average sales increase (aggregated over all showroom openings) is 7.4% and is statistically significant at the 0.05 level.  <br>
+While many of the point estimates are individually not statistically distinguishable from zero, the average of all showroom openings over the entire pre- and post period is. The group-time average treatment effect, i.e. the average sales increase (aggregated over all showroom openings), is 7.4% and is statistically significant at the 0.05-level.  <br>
  <br>
 
 

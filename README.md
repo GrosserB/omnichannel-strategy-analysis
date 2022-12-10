@@ -141,14 +141,21 @@ While many of the point estimates are individually not statistically distinguish
 <br>
 
 
-### Summary of Results & 'So What', Conclusion: "So-What"
+### Summary of Results & "So What"
 
-Marketing attribution is the process of identifying which marketing efforts are responsible for generating sales. We investigate the impact of offline showrooms on online sales for a Berlin-based ecommerce company using methods from the causal inference toolkit. Given that different methods require different assumptions, we use three different methods (difference-in-differences with KNN-matched control group, synthetic control method, and two-way fixed-effects difference-in-difference) to ensure the robustness of our results.
+Marketing attribution is the process of identifying which marketing efforts are responsible for generating sales. We investigate the impact of offline showrooms on online sales for a Berlin-based ecommerce company using methods from the causal inference toolkit. Given that different methods require different assumptions, we use three different state of the art quasi-experimental methods (difference-in-differences with KNN-matched control group, synthetic control method, and two-way fixed-effects difference-in-difference) to ensure the robustness of our results. <br>
 
-We find that the effect of offline showrooms on online sales is between 7% and 20%. This range of estimated effects is statistically and economically significant, meaning that the results are unlikely to have occurred by chance and have a meaningful impact on the business. The more credible estimates are at the lower end of the range, suggesting that the true effect of the showroom on online sales is likely to be closer to 7% than to 20%.
+We find that the effect of offline showrooms on online sales is between 7% and 20%. This range of estimated effects is statistically and economically significant, meaning that the results are unlikely to have occurred by chance and have a meaningful impact on the business. The more credible estimates are at the lower end of the range, suggesting that the true effect of the showroom on online sales is likely to be closer to 7% than to 20%. <br>
+
+Given the estimates, the impact of opening additional showrooms is to be set in relation to the costs to compute the marketing ROI for the showroom channel. This then needs to be compared to the ROI of alternative marketing strategies, e.g., performance-marketing or direct mail, to determine the ROI-optimal marketing mix. Hence, these results provide insights that can be used to optimize the marketing strategy. <br>
+<br>
+<br>
 
 
 
+### How much can we trust the results
+
+-- Try to put somewhere else in the text --
 
 How much can we trust these results, and what is the most resonable single number? Given that all methods produce roughly comparable outcomes is one reason that justifies our trust in these results.
 
@@ -167,17 +174,13 @@ which is most credible
 Clearly, there are many factors impacting the actual
 
 
-
-
-
 Potential follow-ons: channels, other outcome variables, euro-figures for potential showrooms in cities not served by showrooms yet.
 
 Talk about long-term vs. short-term: question: do initial gains consolidate, reverse or continue to grow?
 
 
 
-Given the estimates, the impact of opening additional showrooms is to be set in relation to the costs to compute the marketing ROI for the showroom channel. This then needs to be compared to the ROI of alternative marketing strategies, e.g., performance-marketing or direct mail, to determine the ROI-optimal marketing mix. These results provide insights that can be used to make strategic marketing decisions. <br>
-<br>
+
 
 
 

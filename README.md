@@ -129,13 +129,18 @@ In the pre-treatment period the outcome variable, the mean sales per postal code
 #### Two-way Fixed-effects Difference-in-Difference
 
 In the first section we use the canonical (or 'event study'-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time and it has no "statistically clean" way to aggregate the estimates and confidence bands of multiple events. The so-called Two-Way Fixed Effects regression model ("TWFE") had become the standard solution to this problem. However, an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, e.g., heterogenous or dynamic treatment effects, the estimator delivered biased results). In the following analysis, we implement a version of the TWFE estimator that corrects for some of the flaws in the original TWFE estimator introduced by [Callaway & Sant'Anna (2021)](https://www.sciencedirect.com/science/article/abs/pii/S0304407620303948). The [package](https://bcallaway11.github.io/did/articles/did-basics.html) is only available in R so for the analysis we switch to R. <br>
-
+<br>
 
 <p align="center">
 <img src="./output/ATT_Aggregated.jpg" width="500" height="350"/>
 </p>
 
- *This chart shows online sales in the time around the opening of a showroom for the areas neighboring the showroom relative to a control group areas where no showroom opened (red: year-quarters before the opening, green: year-quarters after the opening). Both the point estimates as well as the confidence bands*
+ *This chart shows estimates of the _relative_ online sales of the areas surrounding the showrooms compared to areas with no showroom in the year-quarters before and after the opening of the showrooms (red: year-quarters before the opening, green: year-quarters after the opening). The dots are the point estimates for each year-quarter and the bars represent 95% confidence intervals. For example, in the first quarter after the opening of a showroom, online sales were around 15% higher in the area surrounding the showrooms compared to areas with no showrooms, a number that is statistically significant on the 95% level (as the zero line is not included in the confidence interval). This number is the average over all showrooms that opened in our sample* <br>
+ <br>
+
+
+
+
 
 
 

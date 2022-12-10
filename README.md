@@ -83,7 +83,7 @@ To tackle these challenges and obtain robust estimates, we employ three state-of
 We start by cleaning and preprocessing of the data. In the time dimension, online sales data is aggregated on the year-quarter level. On the geographic dimension, we additionally aggregate sales data on the postal code level. The location of the showrooms and of the postal codes are geocoded. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period, as some showrooms had opened before. We additionally augment the dataset with the population density (from public sources) and average credit score of the postal code area (provided to us by the ecommerce firm). <br>
 
 
-#### Event-study Difference-in-Differences with K-Nearest Neighbors
+#### Event-study Difference-in-Differences with KNN-Matched Control Group
 
 First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e., what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match treated each postal code area with two other postal code areas using nearest neighbor matching based on on the variables (i) population density, (ii) average credit quality and (iii) total online sales of the very first time period in our data. In a multivariate regression, these three variables explain about 70% of the cross-sectional variation. We match two instead of just one control postal code to each treatment postal code to increase the sample size and thereby reduce the standard errors in our estimation. <br>
 
@@ -126,7 +126,7 @@ In the pre-treatment period the outcome variable, the mean sales per postal code
 <br>
 
 
-#### Two-way Fixed-effects Difference-in-Difference
+#### Two-Way Fixed-Effects Difference-in-Difference
 
 In the first section we use the canonical (or 'event study'-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time and it has no "statistically clean" way to aggregate the estimates and confidence bands of multiple events. The so-called Two-Way Fixed Effects regression model ("TWFE") had become the standard solution to this problem. However, an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, e.g., heterogenous or dynamic treatment effects, the estimator delivered biased results). In the following analysis, we implement a version of the TWFE estimator that corrects for some of the flaws in the original TWFE estimator introduced by [Callaway & Sant'Anna (2021)](https://www.sciencedirect.com/science/article/abs/pii/S0304407620303948). The [package](https://bcallaway11.github.io/did/articles/did-basics.html) is only available in R so for the analysis we switch to R. <br>
 <br>
@@ -138,45 +138,36 @@ In the first section we use the canonical (or 'event study'-style) difference-in
  *This chart shows estimates of the __relative__ online sales of the areas surrounding the showrooms compared to areas with not close to a showroom (red: year-quarters before the opening, green: year-quarters after the opening). The dots are the point estimates for each year-quarter and the bars represent 95% confidence intervals. For example, in the first quarter after the opening of a showroom, online sales increase by around 15% higher. This number is statistically significant on the 95% level (as the zero line is not included in the confidence interval). This number is the average over all showrooms that opened in our sample.* <br>
 
 While many of the point estimates are individually not statistically distinguishable from zero, the average of all showroom openings over the entire pre- and post period is. The group-time average treatment effect, i.e. the average sales increase (aggregated over all showroom openings), is 7.4% and is statistically significant at the 0.05-level.  <br>
- <br>
+<br>
+
+
+### Summary of Results & 'So What', Conclusion: "So-What"
+
+Marketing attribution is the process of identifying which marketing efforts are responsible for generating sales. We investigate the impact of offline showrooms on online sales for a Berlin-based ecommerce company using methods from the causal inference toolkit. Given that different methods require different assumptions, we use three different methods (difference-in-differences with KNN-matched control group, synthetic control method, and two-way fixed-effects difference-in-difference) to ensure the robustness of our results.
+
+We find that the effect of offline showrooms on online sales is between 7% and 20%. This range of estimated effects is statistically and economically significant, meaning that the results are unlikely to have occurred by chance and have a meaningful impact on the business. The more credible estimates are at the lower end of the range, suggesting that the true effect of the showroom on online sales is likely to be closer to 7% than to 20%.
 
 
 
-#### Discussion & Summary of Results
 
-The results of the analyses show robust evidence of a significant positive effect of offline showrooms on online sales, of between 7% -20%.
+How much can we trust these results, and what is the most resonable single number? Given that all methods produce roughly comparable outcomes is one reason that justifies our trust in these results.
 
-The fact that all three methods
+methods are well-established and have a large academic and practicioner community wide reach within the. One particular assumption is needed in all three designs: that the treatment group control group would have evolved similarly to the control group had it not been treated. Given that these methodolgoies use different ways of constructing the treatment group enhances trust.
 
+IN particular, the TWFE method is rtobust to the parallel trend assumption holding only after conditioning on other (CITE)
 
- Employing three different quasi-experimental methods, we find a positive effect
-
-How much can we trust
+RCT/ A/B Test ultimate test
 
 
-
+Employing three different quasi-experimental methods, we find a positive effect
 All of the methods employed here are quasi-experimental and let us avaiod as much as possible the omitted variable bias. At the same time,
-
-
-
-
-
+what are threats/potential limitations
 which is most credible
 
-what are threats/potential limitations
+Clearly, there are many factors impacting the actual
 
 
 
-
-As with all approaches to causal inference on non-experimental data, valid conclusions require strong assumptions. This method assumes that the outcome of the treated unit can be explained in terms of a set of control units that were themselves not affected by the intervention. Furthermore, the relationship between the treated and control units is assumed to remain stable during the post-intervention period. Including only control units in your dataset that meet these assumptions is critical to the reliability of causal estimates.
-
-
-### Conclusion: "So-What"
-
-Input here the computer on estimated revenue
-
-
-The results on the impact of opening additional showrooms is to be set in relation to the costs to compute the marketing ROI. This needs to be compared to the ROI of alternative marketing strategies, in particular, performance-marketing.
 
 
 Potential follow-ons: channels, other outcome variables, euro-figures for potential showrooms in cities not served by showrooms yet.
@@ -185,19 +176,14 @@ Talk about long-term vs. short-term: question: do initial gains consolidate, rev
 
 
 
+Given the estimates, the impact of opening additional showrooms is to be set in relation to the costs to compute the marketing ROI for the showroom channel. This then needs to be compared to the ROI of alternative marketing strategies, e.g., performance-marketing or direct mail, to determine the ROI-optimal marketing mix. These results provide insights that can be used to make strategic marketing decisions. <br>
+<br>
+
+
 
 ## Overview
 
-
-
 ### File Structure
-
-### Authors, Acknowledgements
-
-Thanking Valentin
-Early contributions by acknowledge by Jian and Jean
-Thanking the anonymous Berlin-based e-commerce company
-
 
 
 ## Detailed Setup and Preprocessing Description
@@ -300,3 +286,6 @@ mkdir tmp
 cd tmp
 MultiChannelStrategy-run
 ```
+### Acknowledgements
+
+We would like to thank Valentin Burg for his support. We would also like to thank early Jian and Jean for early contributions during the . Finally, we would like to thank the anonymous Berlin-based e-commerce company for making available to us the data. We hope the analysis is useful

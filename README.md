@@ -30,19 +30,15 @@ The data used for this project is confidential, hence any information shown here
 
 ## Table of Contents
 
-**[Summary](#1)**
-**[Table of Contents](#2)**
+**[Summary](#1)** <br/>
+**[Table of Contents](#2)** <br/>
 **[Description](#3)**
  * [Marketing Attribution Objective & Causal Inference Challenge](#3.1)
  * [Analyses & Results](#3.2)
-  * [Data Preprocessing](#3.2.1)
+    * [Data Preprocessing](#3.2.1)
 
 
 
-      * [2.1.1. Not so basic text formatting](#heading--2-1-1)
-
-  * [2.2. Lists, Images, Code](#heading--2-2)
-  * [2.3. Special features](#heading--2-3)
 
 ## Table of Contents
 - [Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?](#Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?)

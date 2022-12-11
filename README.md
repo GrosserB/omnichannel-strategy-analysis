@@ -24,9 +24,9 @@ The data used for this project is confidential, hence any information shown here
 <br/>
 
 ## Table of Contents 2
-[Summary](#summary)
-[Table of Contents](#table-of-contents)
-[Description](#description)
+-[Summary](#summary)
+-[Table of Contents](#table-of-contents)
+-[Description](#description)
     - [Objective](#objective)
     - [Analyses \& Results](#analyses--results)
       - [Data and Introduction](#data-and-introduction)

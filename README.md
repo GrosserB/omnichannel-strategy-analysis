@@ -144,40 +144,16 @@ While many of the point estimates are individually not statistically distinguish
 
 Marketing attribution is the process of identifying which marketing efforts are responsible for generating sales. We investigate the impact of offline showrooms on online sales for a Berlin-based ecommerce company using methods from the causal inference toolkit. Given that different methods require different assumptions, we use three different state of the art quasi-experimental methods (difference-in-differences with KNN-matched control group, synthetic control method, and two-way fixed-effects difference-in-difference) to ensure the robustness of our results. <br>
 
-We find that the effect of offline showrooms on online sales is between 7% and 20%. This range of estimated effects is statistically and economically significant, meaning that the results are unlikely to have occurred by chance and have a meaningful impact on the business. The more credible estimates are at the lower end of the range, suggesting that the true effect of the showroom on online sales is likely to be closer to 7% than to 20%. <br>
+We find that the effect of offline showrooms on online sales is between 7% and 20%. This range of estimated effects is statistically and economically significant, meaning that the results are unlikely to have occurred by chance and have a material impact on the business. The more credible estimates are at the lower end of the range, suggesting that the true effect of the showroom on online sales is likely to be closer to 7% than to 20%. <br>
 
 Given the estimates, the impact of opening additional showrooms is to be set in relation to the costs to compute the marketing ROI for the showroom channel. This then needs to be compared to the ROI of alternative marketing strategies, e.g., performance-marketing or direct mail, to determine the ROI-optimal marketing mix. Hence, these results provide insights that can be used to optimize the marketing strategy. <br>
 <br>
 <br>
 
 
-
-### How much can we trust the results
-
--- Try to put somewhere else in the text --
-
-How much can we trust these results, and what is the most resonable single number? Given that all methods produce roughly comparable outcomes is one reason that justifies our trust in these results.
-
-methods are well-established and have a large academic and practicioner community wide reach within the. One particular assumption is needed in all three designs: that the treatment group control group would have evolved similarly to the control group had it not been treated. Given that these methodolgoies use different ways of constructing the treatment group enhances trust.
-
-IN particular, the TWFE method is rtobust to the parallel trend assumption holding only after conditioning on other (CITE)
-
-RCT/ A/B Test ultimate test
-
-
-Employing three different quasi-experimental methods, we find a positive effect
-All of the methods employed here are quasi-experimental and let us avaiod as much as possible the omitted variable bias. At the same time,
-what are threats/potential limitations
-which is most credible
-
-Clearly, there are many factors impacting the actual
-
-
-Potential follow-ons: channels, other outcome variables, euro-figures for potential showrooms in cities not served by showrooms yet.
-
-Talk about long-term vs. short-term: question: do initial gains consolidate, reverse or continue to grow?
-
-
+<p align="center">
+<img src="./output/Main_Project_Notebook.png.png" width="1000" height="100000"/>
+</p>
 
 
 
@@ -185,14 +161,13 @@ Talk about long-term vs. short-term: question: do initial gains consolidate, rev
 
 ## Overview
 
-### File Structure
-
-
 ## Detailed Setup and Preprocessing Description
 
 ### Overview
 
-All parts of the analysis are documented in the jupyter notebook `Main_Project_Notebook.ipynb` together with step-by-step explanations of methods. We provided an example dataset that serves as a basis to explain our approach. It can also be used by anyone to replicate our results.
+All parts of the analysis are documented in the jupyter notebook `Main_Project_Notebook.ipynb`. To replicate the results, an
+
+As mentioned above, the original data has been significantly altered to comply with a confidentiality agreement. But, the original preprocessing steps for this project have been preserved in `Data_Preprocessing_Notebook.ipynb` and can be accessed in the `notebooks` folder.
 
 
 ### Installation
@@ -214,80 +189,3 @@ For anyone who wants to use our approach for a similar analysis, we give a detai
 
 
 ### Further Insights Into Data Preprocessing
-
-As mentioned above, the original data has been significantly altered to comply with a confidentiality agreement. But, the original preprocessing steps for this project have been preserved in `Data_Preprocessing_Notebook.ipynb` and can be accessed in the `notebooks` folder.
-
-Also, the original project used Google's Cloud Storage and BigQuery to store and load the large amounts of data (millions of observations) that would have otherwise exceeded the memory capacity of our machines. Through several preprocessing steps that combined those observations, the data was reduced to merely 400.000 rows, that fit into a single csv file of less than 100MB. A small tutorial on the usage of Google's Cloud Storage and BigQuery for this project is also available in the `Documentation.md` file.
-
-
-
-------------------------------------
-# Project setup
-
-The initial setup.
-
-Create virtualenv and install the project:
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
-    pip install pip -U; pip install -r requirements.txt
-```
-
-Unittest test:
-```bash
-make clean install test
-```
-
-Check for MultiChannelStrategy in gitlab.com/{group}.
-If your project is not set please add it:
-
-- Create a new project on `gitlab.com/{group}/MultiChannelStrategy`
-- Then populate it:
-
-```bash
-##   e.g. if group is "{group}" and project_name is "MultiChannelStrategy"
-git remote add origin git@github.com:{group}/MultiChannelStrategy.git
-git push -u origin master
-git push -u origin --tags
-```
-
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-MultiChannelStrategy-run
-```
-
-# Installation
-
-Go to `https://github.com/{group}/MultiChannelStrategy` to see the project, manage issues,
-setup you ssh public key, ...
-
-Create a python3 virtualenv and activate it:
-
-```bash
-sudo apt-get install virtualenv python-pip python-dev
-deactivate; virtualenv -ppython3 ~/venv ; source ~/venv/bin/activate
-```
-
-Clone the project and install it:
-
-```bash
-git clone git@github.com:{group}/MultiChannelStrategy.git
-cd MultiChannelStrategy
-pip install -r requirements.txt
-make clean install test                # install and test
-```
-Functionnal test with a script:
-
-```bash
-cd
-mkdir tmp
-cd tmp
-MultiChannelStrategy-run
-```
-### Acknowledgements
-
-We would like to thank Valentin Burg for his support. We would also like to thank early Jian and Jean for early contributions during the . Finally, we would like to thank the anonymous Berlin-based e-commerce company for making available to us the data. We hope the analysis is useful

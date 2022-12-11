@@ -19,24 +19,22 @@ Michael Dietrich ([LinkedIn](https://www.linkedin.com/in/m-dietrich/), [Github](
 Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)) <br>
 
 **Note**: <br>
-The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location, opening dates, or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
+The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location, opening dates, or absolute numbers) are fictionalized. This project page is still work-in-progress. <br>
 <br/>
 
 ## Table of Contents
-- [Summary](#summary)
+- [Project Summary](#summary)
 - [Table of Contents](#table-of-contents)
-- [Description](#description)
-  - [Marketing Attribution Objective & Causal Inference Challenge](#marketing-attribution-objective--causal-inference-challenge)
-  - [Analyses & Results](#analyses--results)
-    - [Data Preprocessing](#data-preprocessing)
-    - [Event-study Difference-in-Differences with KNN-Matched Control Group](#event-study-difference-in-differences-with-knn-matched-control-group)
-    - [Synthetic Control Method](#synthetic-control-method)
-    - [Two-Way Fixed-Effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)
-  - [Summary of Results & "So What"](#summary-of-results--so-what)
+- [Marketing Attribution Objective & Causal Inference Challenge](#marketing-attribution-objective--causal-inference-challenge)
+- [Analyses & Results](#analyses--results)
+  - [Data Preprocessing](#data-preprocessing)
+  - [Event-study Difference-in-Differences with KNN-Matched Control Group](#event-study-difference-in-differences-with-knn-matched-control-group)
+  - [Synthetic Control Method](#synthetic-control-method)
+  - [Two-Way Fixed-Effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)
+- [Summary of Results & "So What"](#summary-of-results--so-what)
 
 
-## Description
-### Marketing Attribution Objective & Causal Inference Challenge
+## Marketing Attribution Objective & Causal Inference Challenge
 
 Omnichannel marketing is fast becoming a central pillar in B2C marketing. In particular, e-commerce companies increasingly use brick-and-mortar showrooms to not only showcase the product in real-life but also to create brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall marketing ROI. Obtaining these estimates for the showroom channel is the objective of this project. <br>
 
@@ -58,13 +56,13 @@ To tackle these challenges and obtain robust estimates, we employ three state-of
 <br>
 
 
-### Analyses & Results
-#### Data Preprocessing
+## Analyses & Results
+### Data Preprocessing
 
 We start by cleaning and preprocessing of the data. In the time dimension, online sales data is aggregated on the year-quarter level. On the geographic dimension, we additionally aggregate sales data on the postal code level. The location of the showrooms and of the postal codes are geocoded. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period, as some showrooms had opened before. We additionally augment the dataset with the population density (from public sources) and average credit score of the postal code area (provided to us by the ecommerce firm). <br>
 
 
-#### Event-study Difference-in-Differences with KNN-Matched Control Group
+### Event-study Difference-in-Differences with KNN-Matched Control Group
 
 First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e., what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match treated each postal code area with two other postal code areas using nearest neighbor matching based on on the variables (i) population density, (ii) average credit quality and (iii) total online sales of the very first time period in our data. In a multivariate regression, these three variables explain about 70% of the cross-sectional variation. We match two instead of just one control postal code to each treatment postal code to increase the sample size and thereby reduce the standard errors in our estimation. <br>
 
@@ -94,7 +92,7 @@ This is a classical difference-in-differences regression where the variable *Pos
 The results for the other showrooms are (mostly) similar in magnitude and statistical significance. <br>
 <br>
 
-#### Synthetic Control Method
+### Synthetic Control Method
 
 We next employ the Synthetic Control Method ("SCM") to analyze the effect of the showroom opening online sales. Similarly to the previous methodology, SCM employs a control group as counterfactual, and uses the Post-treatment periods to estimate the treatment effect. The major difference lies in how the control group is constructed. SCM selects weights to construct a synthetic version of the treated unit such that the outcome in the pre-treatment periods matches the outcome of the treated unit as closely as possible. In contrast to difference-in-differences, only one (aggregate) version of the treated and control unit exists. The treatment effect in absolute numbers is the difference between the treatment area and the synthetic control area.
 
@@ -107,7 +105,7 @@ In the pre-treatment period the outcome variable, the mean sales per postal code
 <br>
 
 
-#### Two-Way Fixed-Effects Difference-in-Difference
+### Two-Way Fixed-Effects Difference-in-Difference
 
 In the first section we use the canonical (or 'event study'-style) difference-in-differences method. The major limitation of that method is that it can only handle one event at a time and it has no "statistically clean" way to aggregate the estimates and confidence bands of multiple events. The so-called Two-Way Fixed Effects regression model ("TWFE") had become the standard solution to this problem. However, an emerging scientific literature has pointed out flaws of the original TWFE estimator (under some conditions, e.g., heterogenous or dynamic treatment effects, the estimator delivered biased results). In the following analysis, we implement a version of the TWFE estimator that corrects for some of the flaws in the original TWFE estimator introduced by [Callaway & Sant'Anna (2021)](https://www.sciencedirect.com/science/article/abs/pii/S0304407620303948). The [package](https://bcallaway11.github.io/did/articles/did-basics.html) is only available in R so for the analysis we switch to R. <br>
 <br>
@@ -122,7 +120,7 @@ While many of the point estimates are individually not statistically distinguish
 <br>
 
 
-### Summary of Results & "So What"
+## Summary of Results & "So What"
 
 Marketing attribution is the process of identifying which marketing efforts are responsible for generating sales. We investigate the impact of offline showrooms on online sales for a Berlin-based ecommerce company using methods from the causal inference toolkit. Given that different methods require different assumptions, we use three different state of the art quasi-experimental methods (difference-in-differences with KNN-matched control group, synthetic control method, and two-way fixed-effects difference-in-difference) to ensure the robustness of our results. <br>
 

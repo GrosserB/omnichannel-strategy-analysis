@@ -13,7 +13,6 @@ This project for a Berlin-based e-commerce firm uses confidential online sales d
 <br>
 <br>
 
-
 **Authors**: <br>
 Michael Dietrich ([LinkedIn](https://www.linkedin.com/in/m-dietrich/), [Github](https://github.com/mihyael)) <br>
 Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingrosserueschkamp), [Github](https://github.com/GrosserB)) <br>
@@ -33,6 +32,8 @@ The data used for this project is confidential, hence any information shown here
   - [Two-Way Fixed-Effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)
 - [Summary of Results & "So What"](#summary-of-results--so-what)
 
+<br>
+<br>
 
 ## Marketing Attribution Objective & Causal Inference Challenge
 

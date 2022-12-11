@@ -24,25 +24,17 @@ Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingross
 The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location, opening dates, or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
 <br/>
 
-
-[Analysis of Omnichannel Marketing Strategy: Do Offline Showrooms Increase Online Sales?](#analysis-of-omnichannel-marketing-strategy-do-offline-showrooms-increase-online-sales)
-- [Summary](#summary)
-- [Table of Contents](#table-of-contents)auto  - [Table of Contents](#table-of-contents-1)auto
-- [Description](#description)auto
-  - [Marketing Attribution Objective & Causal Inference Challenge](#marketing-attribution-objective--causal-inference-challenge)auto    - [Analyses & Results](#analyses--results)auto      - [Data Preprocessing](#data-preprocessing)auto      - [Event-study Difference-in-Differences with KNN-Matched Control Group](#event-study-difference-in-differences-with-knn-matched-control-group)auto      - [Synthetic Control Method](#synthetic-control-method)auto      - [Two-Way Fixed-Effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)auto    - [Summary of Results & "So What"](#summary-of-results--so-what)
-
-
-<div id="2"/>
-
 ## Table of Contents
--[Summary](#1)
--[Table of Contents](#2)
--[Description](#3)
-  -[Marketing Attribution Objective & Causal Inference Challenge](#3.1)
-      -[Analyses & Results](#3.2)
-      -[Data Preprocessing](#3.2.1)
-  -[Analyses & Results](#3.2)
-
+- [Summary](#summary)
+- [Table of Contents](#table-of-contents)
+- [Description](#description)
+  - [Marketing Attribution Objective & Causal Inference Challenge](#marketing-attribution-objective--causal-inference-challenge)
+  - [Analyses & Results](#analyses--results)
+    - [Data Preprocessing](#data-preprocessing)
+    - [Event-study Difference-in-Differences with KNN-Matched Control Group](#event-study-difference-in-differences-with-knn-matched-control-group)
+    - [Synthetic Control Method](#synthetic-control-method)
+    - [Two-Way Fixed-Effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)
+  - [Summary of Results & "So What"](#summary-of-results--so-what)
 
 
 ## Table of Contents

@@ -30,13 +30,13 @@ The data used for this project is confidential, hence any information shown here
 
 ## Table of Contents
 
--[Summary](#1) <br/>
--[Table of Contents](#2) <br/>
+-[Summary](#1)
+-[Table of Contents](#2)
 -[Description](#3)
- * [Marketing Attribution Objective & Causal Inference Challenge](#3.1)
- * [Analyses & Results](#3.2)
-    * [Data Preprocessing](#3.2.1)
- * [Analyses & Results](#3.2)
+  -[Marketing Attribution Objective & Causal Inference Challenge](#3.1)
+  -[Analyses & Results](#3.2)
+    -[Data Preprocessing](#3.2.1)
+  -[Analyses & Results](#3.2)
 
 
 

@@ -1,4 +1,4 @@
-# Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?
+# Analysis of Omnichannel Marketing Strategy: Do Offline Showrooms Increase Online Sales?
 ## Summary
 This project for a Berlin-based e-commerce firm uses confidential online sales data to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by between 7% and 20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of that range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
 <br />
@@ -23,13 +23,28 @@ Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingross
 The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location, opening dates, or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
 <br/>
 
+## Table of Contents 2
+[Summary](#summary)
+[Table of Contents](#table-of-contents)
+[Description](#description)
+    - [Objective](#objective)
+    - [Analyses \& Results](#analyses--results)
+      - [Data and Introduction](#data-and-introduction)
+      - [Event-study Difference-in-Differences with K-Nearest Neighbors](#event-study-difference-in-differences-with-k-nearest-neighbors)
+      - [Synthetic Control Method](#synthetic-control-method)
+      - [Two-way Fixed-effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)
+      - [Discussion \& Summary of Results](#discussion--summary-of-results)
+    - [So-What](#so-what)
+  - [Overview](#overview)
+
+
 
 ## Table of Contents
-- [Evaluation of Omnichannel Strategy at Berlin-based E-Commerce Company: Do Offline Showrooms Increase Online Sales? -- WORK IN PROGRESS --](#evaluation-of-omnichannel-strategy-at-berlin-based-e-commerce-company-do-offline-showrooms-increase-online-sales----work-in-progress---)
+- [Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?](#Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?)
   - [Summary](#summary)
   - [Table of Contents](#table-of-contents)
   - [Description](#description)
-    - [Objective](#objective)
+    - [Marketing Attribution Objective & Causal Inference Challenge](#Marketing Attribution Objective & Causal Inference Challenge)
     - [Analyses \& Results](#analyses--results)
       - [Data and Introduction](#data-and-introduction)
       - [Event-study Difference-in-Differences with K-Nearest Neighbors](#event-study-difference-in-differences-with-k-nearest-neighbors)

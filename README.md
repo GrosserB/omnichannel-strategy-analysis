@@ -1,6 +1,4 @@
-<div id="1"/>
-
-# Analysis of Omnichannel Marketing Strategy: Do Offline Showrooms Increase Online Sales?
+# Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?
 ## Summary
 This project for a Berlin-based e-commerce firm uses confidential online sales data to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by between 7% and 20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of that range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
 <br />
@@ -37,37 +35,6 @@ The data used for this project is confidential, hence any information shown here
   - [Summary of Results & "So What"](#summary-of-results--so-what)
 
 
-## Table of Contents
-- [Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?](#Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?)
-  - [Summary](#summary)
-  - [Table of Contents](#table-of-contents)
-  - [Description](#description)
-    - [Marketing Attribution Objective & Causal Inference Challenge](#Marketing Attribution Objective & Causal Inference Challenge)
-    - [Analyses \& Results](#analyses--results)
-      - [Data and Introduction](#data-and-introduction)
-      - [Event-study Difference-in-Differences with K-Nearest Neighbors](#event-study-difference-in-differences-with-k-nearest-neighbors)
-      - [Synthetic Control Method](#synthetic-control-method)
-      - [Two-way Fixed-effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)
-      - [Discussion \& Summary of Results](#discussion--summary-of-results)
-    - [So-What](#so-what)
-  - [Overview](#overview)
-    - [File Structure](#file-structure)
-    - [Authors, Acknowledgements](#authors-acknowledgements)
-  - [Detailed Project Description](#detailed-project-description)
-    - [Overview](#overview-1)
-    - [Objectives](#objectives)
-    - [Methods Used](#methods-used)
-    - [Installation](#installation)
-    - [Data Processing / Preparation / Loading / Saving](#data-processing--preparation--loading--saving)
-    - [Further Insights Into Data Preprocessing](#further-insights-into-data-preprocessing)
-- [Bootcamp Legacy Contents](#bootcamp-legacy-contents)
-- [Startup the project](#startup-the-project)
-- [Installation](#installation-1)
-
-
-<div id="3"/>
-<div id="3.1"/>
-
 ## Description
 ### Marketing Attribution Objective & Causal Inference Challenge
 
@@ -90,8 +57,6 @@ A particular methodological concern in this setting are potentially hidden facto
 To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods. <br>
 <br>
 
-<div id="3.2"/>
-<div id="3.2.1"/>
 
 ### Analyses & Results
 #### Data Preprocessing

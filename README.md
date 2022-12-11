@@ -25,17 +25,19 @@ The data used for this project is confidential, hence any information shown here
 <br/>
 
 
+[[TOC]]
+<!-- TOC -->autoauto- [Analysis of Omnichannel Marketing Strategy: Do Offline Showrooms Increase Online Sales?](#analysis-of-omnichannel-marketing-strategy-do-offline-showrooms-increase-online-sales)auto  - [Summary](#summary)auto  - [Table of Contents](#table-of-contents)auto  - [Table of Contents](#table-of-contents-1)auto  - [Description](#description)auto    - [Marketing Attribution Objective & Causal Inference Challenge](#marketing-attribution-objective--causal-inference-challenge)auto    - [Analyses & Results](#analyses--results)auto      - [Data Preprocessing](#data-preprocessing)auto      - [Event-study Difference-in-Differences with KNN-Matched Control Group](#event-study-difference-in-differences-with-knn-matched-control-group)auto      - [Synthetic Control Method](#synthetic-control-method)auto      - [Two-Way Fixed-Effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)auto    - [Summary of Results & "So What"](#summary-of-results--so-what)autoauto<!-- /TOC -->
+
 
 <div id="2"/>
 
 ## Table of Contents
-
 -[Summary](#1)
 -[Table of Contents](#2)
 -[Description](#3)
   -[Marketing Attribution Objective & Causal Inference Challenge](#3.1)
-  -[Analyses & Results](#3.2)
-    -[Data Preprocessing](#3.2.1)
+      -[Analyses & Results](#3.2)
+      -[Data Preprocessing](#3.2.1)
   -[Analyses & Results](#3.2)
 
 

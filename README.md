@@ -1,5 +1,4 @@
-# Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales? *(Work-in-Progress)*
-
+# Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?
 ## Summary
 This project for a Berlin-based e-commerce firm uses confidential online sales data to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by between 7% and 20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of that range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
 <br />

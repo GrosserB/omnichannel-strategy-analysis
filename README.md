@@ -1,3 +1,5 @@
+<div id="1"/>
+
 # Analysis of Omnichannel Marketing Strategy: Do Offline Showrooms Increase Online Sales?
 ## Summary
 This project for a Berlin-based e-commerce firm uses confidential online sales data to estimate the causal effect of offline showrooms on online sales. We employ synthetic control methods and difference-in-differences methods to estimate the causal parameters. The results of our analyses suggest that a brick-and-mortar showroom increases online sales in the area surrounding the showroom by between 7% and 20%. The numbers are statistically and economically significant; the more credible estimates are at the lower end of that range. In combination with the costs of operating the showrooms, a "showroom ROI" can be obtained and benchmarked against that of other marketing channels. Therefore, this project provides important inputs that support strategic decision-making on the optimal marketing mix.
@@ -9,7 +11,6 @@ This project for a Berlin-based e-commerce firm uses confidential online sales d
 </p>
 
   *This chart shows online sales for the areas neighboring a showroom relative to matched control areas where no showroom opened. The online sales for both areas are indexed on the opening year-quarter (green: showroom "city 1", red: KNN-matched areas with no showroom)*
-
 
 <br>
 <br>
@@ -23,26 +24,25 @@ Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingross
 The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location, opening dates, or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
 <br/>
 
-# My Table of content
-- [Section 1](#id-section1)
-- [Section 2](#id-section2)
 
 
-## Table of Contents 2
--[Summary](#summary)
--[Table of Contents](#table-of-contents)
--[Description](#description)
-    - [Objective](#objective)
-    - [Analyses \& Results](#analyses--results)
-      - [Data and Introduction](#data-and-introduction)
-      - [Event-study Difference-in-Differences with K-Nearest Neighbors](#event-study-difference-in-differences-with-k-nearest-neighbors)
-      - [Synthetic Control Method](#synthetic-control-method)
-      - [Two-way Fixed-effects Difference-in-Difference](#two-way-fixed-effects-difference-in-difference)
-      - [Discussion \& Summary of Results](#discussion--summary-of-results)
-    - [So-What](#so-what)
-  - [Overview](#overview)
+<div id="2"/>
+
+## Table of Contents
+
+**[Summary](#1)**
+**[Table of Contents](#2)**
+**[Description](#3)**
+ * [Marketing Attribution Objective & Causal Inference Challenge](#3.1)
+ * [Analyses & Results](#3.2)
+  * [Data Preprocessing](#3.2.1)
 
 
+
+      * [2.1.1. Not so basic text formatting](#heading--2-1-1)
+
+  * [2.2. Lists, Images, Code](#heading--2-2)
+  * [2.3. Special features](#heading--2-3)
 
 ## Table of Contents
 - [Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?](#Analysis of Omnichannel Marketing Strategy: How Much Do Offline Showrooms Increase Online Sales?)
@@ -72,7 +72,9 @@ The data used for this project is confidential, hence any information shown here
 - [Installation](#installation-1)
 
 
-<div id='id-section1'/>
+<div id="3"/>
+<div id="3.1"/>
+
 ## Description
 ### Marketing Attribution Objective & Causal Inference Challenge
 
@@ -95,9 +97,10 @@ A particular methodological concern in this setting are potentially hidden facto
 To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods. <br>
 <br>
 
-<div id='id-section2'/>
-### Analyses & Results
+<div id="3.2"/>
+<div id="3.2.1"/>
 
+### Analyses & Results
 #### Data Preprocessing
 
 We start by cleaning and preprocessing of the data. In the time dimension, online sales data is aggregated on the year-quarter level. On the geographic dimension, we additionally aggregate sales data on the postal code level. The location of the showrooms and of the postal codes are geocoded. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period, as some showrooms had opened before. We additionally augment the dataset with the population density (from public sources) and average credit score of the postal code area (provided to us by the ecommerce firm). <br>

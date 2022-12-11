@@ -23,6 +23,11 @@ Benjamin Grosse-Rueschkamp ([LinkedIn](https://www.linkedin.com/in/benjamingross
 The data used for this project is confidential, hence any information shown here that could identify the firm (e.g. showroom location, opening dates, or absolute numbers) are fictionalized. This project is still work-in-progress. <br>
 <br/>
 
+# My Table of content
+- [Section 1](#id-section1)
+- [Section 2](#id-section2)
+
+
 ## Table of Contents 2
 -[Summary](#summary)
 -[Table of Contents](#table-of-contents)
@@ -67,7 +72,7 @@ The data used for this project is confidential, hence any information shown here
 - [Installation](#installation-1)
 
 
-
+<div id='id-section1'/>
 ## Description
 ### Marketing Attribution Objective & Causal Inference Challenge
 
@@ -90,6 +95,7 @@ A particular methodological concern in this setting are potentially hidden facto
 To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods. <br>
 <br>
 
+<div id='id-section2'/>
 ### Analyses & Results
 
 #### Data Preprocessing

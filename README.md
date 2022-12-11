@@ -152,7 +152,7 @@ Given the estimates, the impact of opening additional showrooms is to be set in 
 
 
 <p align="center">
-<img src="./output/Main_Project_Notebook.png" width="1200" height="1000000"/>
+<img src="./output/Main_Project_Notebook.png" width="1200" height="10000000"/>
 </p>
 
 

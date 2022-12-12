@@ -50,7 +50,7 @@ A particular methodological concern in this setting are potentially hidden facto
 <img src="./output/Pandemic_Growth_by_PopulationDensity.png" width="400" height="400"/>
 </p>
 
-*Online sales growth during the covid-19 pandemic across population density quantiles. More densely populated areas increased their online order volume at a higher rate during the pandemic* <br>
+*This chart shows online sales growth during the covid-19 pandemic across population density quantiles. More densely populated areas increased their online order volume at a higher rate during the pandemic* <br>
 <br>
 
 To tackle these challenges and obtain robust estimates, we employ three state-of-the-art methodologies from the causal inference toolkit: (1) event-study difference-in-differences with k-nearest neigbors to select the control group, (2) synthetic control methods, and (3) heterogenous-robust two-way fixed-effects difference-in-difference estimation methods. <br>
@@ -60,21 +60,21 @@ To tackle these challenges and obtain robust estimates, we employ three state-of
 ## Analyses & Results
 ### Data Preprocessing
 
-We start by cleaning and preprocessing of the data. In the time dimension, online sales data is aggregated on the year-quarter level. On the geographic dimension, we additionally aggregate sales data on the postal code level. The location of the showrooms and of the postal codes are geocoded. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period, as some showrooms had opened before. We additionally augment the dataset with the population density (from public sources) and average credit score of the postal code area (provided to us by the ecommerce firm). <br>
+We start by cleaning and preprocessing the data. In the time dimension, online sales data is aggregated on the year-quarter level. On the geographic dimension, we aggregate sales data on the postal code level. The location of the showrooms and of the postal codes are geocoded. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period (some showrooms had opened before). We additionally augment the dataset with the population density (from public sources) and average credit score of the postal code area (provided to us by the e-commerce firm). <br>
 
 
 ### Event-study Difference-in-Differences with KNN-Matched Control Group
 
-First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e., what would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match treated each postal code area with two other postal code areas using nearest neighbor matching based on on the variables (i) population density, (ii) average credit quality and (iii) total online sales of the very first time period in our data. In a multivariate regression, these three variables explain about 70% of the cross-sectional variation. We match two instead of just one control postal code to each treatment postal code to increase the sample size and thereby reduce the standard errors in our estimation. <br>
+First, we use nearest neighbor matching to construct a control group. The purpose of the control group is to provide a counterfactual to the treatment group, i.e., to provide the outcome that would have happened to the treatment group had it not been exposed to the treatment. To obtain the control group, we match each treated each postal code area with two other postal code areas using nearest neighbor matching based on on the variables (i) population density, (ii) average credit quality and (iii) total online sales of the very first time period in our data. In a multivariate regression, these three variables explain about 70% of the cross-sectional variation of the online sales. We match two instead of just one control postal code to each treatment postal code to increase the sample size and thereby reduce the standard errors in our estimation. <br>
 
 
 <p align="center">
 <img src="./output/KNN_Match_City1.png" width="600" height="400"/>
 </p>
 
- *This chart shows online sales for the areas neighboring a showroom relative to matched control areas where no showroom opened. The online sales for both areas are indexed on the opening year-quarter (green: showroom "city 1", red: KNN-matched areas with no showroom)*
+ *This chart shows online sales for the areas neighboring a showroom relative to matched control areas where no showroom opened. The online sales for both areas are indexed on the opening year-quarter (green: areas around the showroom in "city1", red: KNN-matched areas with no showroom)*
 
-Before the opening of the showroom, online sales grow at similar rates in treatment and control areas, After the showroom opens, the series diverge and the areas around the showroom increase their online order volume at a faster rate. This simple plot provides first evidence to the effect of the showroom on online sales. <br>
+Before the opening of the showroom, online sales grow at similar rates in treatment and control areas. After the showroom opens, the series diverge and the areas around the showroom increase their online order volume at a faster rate. This plot provides first evidence to the effect of the showroom on online sales. <br>
 
 To analyze the effect of the showroom opening more rgiorously, we next run an event-style difference-in-differences regression: <br>
 
@@ -88,7 +88,7 @@ The table shows the results of the following linear panel regression:<br>
 <img src="https://latex.codecogs.com/svg.image?\inline&space;\small&space;log(order\&space;value_{it})&space;=&space;\alpha&space;&plus;&space;\beta\&space;&space;\mathit{Treatment_i&space;\times&space;Post_t}&space;&plus;&space;\lambda&space;\mathit{Treatment_i}&space;&plus;&space;\phi&space;\mathit{Post_t}&space;&plus;&space;\vartheta&space;&space;X_{it}&space;&plus;&space;\epsilon_{it}"/>
  </p>
 
-This is a classical difference-in-differences regression where the variable *Post* is an indicator variable that equals one for all year-quarters after the showoom opened, and zero otherwise; the variable *Treatment* is an indicator variable that equals one for all postal code areas that are within the 50km range around the showroom, and zero for all control postal code areas. *Treatment* $\times$ *Post* is the interaction term of the two variables, and it the variable of interest. The dependent (aka "target") variable is the natural logarithm of the quarterly total order value (in EUR) in each postal code area. As the dependent variable is logarithmized, we can interpret the parameter estimate on the interaction term *Treatment* $\times$ *Post* as the mean percentage change in the dependent variable for the treated units after the opening of the showroom relative to the untreated postal code areas. Hence, the estimates for the showroom openings show an increase of 10.34%. With a p-value of 0.001, the point estimate is highly statistically significant; standard errors are clustered on the postal-code area. <br>
+This is a classical difference-in-differences regression where the variable *Post* is an indicator variable that equals one for all year-quarters after the showoom opened, and zero otherwise; the variable *Treatment* is an indicator variable that equals one for all postal code areas that are within the 50km range around the showroom, and zero for all control postal code areas. *Treatment* $\times$ *Post* is the interaction term of the two variables, and it the variable of interest. The dependent (aka "target") variable is the natural logarithm of the quarterly total order value (in EUR) in each postal code area. As the dependent variable is logarithmized, we can interpret the parameter estimate on the interaction term *Treatment* $\times$ *Post* as the mean percentage change in the dependent variable for the treated units after the opening of the showroom relative to the untreated postal code areas. Hence, the estimates for the showroom openings show an increase of 10.34%. With a p-value of 0.001, the point estimate is highly statistically significant; standard errors are clustered on the postal-code area. This provides strong evidence and a first estimate of the magnitude of the showroom effect. <br>
 
 The results for the other showrooms are (mostly) similar in magnitude and statistical significance. <br>
 <br>

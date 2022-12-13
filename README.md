@@ -37,7 +37,7 @@ The data used for this project is confidential, hence any information shown here
 
 ## Marketing Attribution Objective & Causal Inference Challenge
 
-Omnichannel marketing is fast becoming a central pillar in B2C marketing. In particular, e-commerce companies increasingly use brick-and-mortar showrooms to showcase the product physically and thereby provide important information on the product and strengthen brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall marketing ROI. Obtaining these estimates for the showroom channel is the objective of this project. <br>
+Omnichannel marketing is fast becoming a central pillar in B2C marketing. In particular, e-commerce companies increasingly use brick-and-mortar showrooms to showcase the product physically and thereby provide important information on the product and strengthen brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall return on marketing spend. Obtaining these estimates for the showroom channel is the objective of this project. <br>
 
 We collaborate with a Berlin-based e-commerce company to analyze and quantify the causal impact of their brick-and-mortar showrooms on online sales. For a sample period of several years, we are provided confidential order data of every order made. Several new showrooms are opened during that time period. The showrooms allow interaction with the products on-site but both order process and fulfillment are online. Conceptually, we solve the marketing attribution problem using methods from the causal inference toolkit. <br>
 
@@ -76,7 +76,7 @@ First, we use nearest neighbor matching to construct a control group. The purpos
 
 Before the opening of the showroom, online sales grow at similar rates in treatment and control areas. After the showroom opens, the series diverge and the areas around the showroom increase their online order volume at a faster rate. This plot provides first evidence to the effect of the showroom on online sales. <br>
 
-To analyze the effect of the showroom opening more rgiorously, we next run an event-style difference-in-differences regression: <br>
+To analyze the effect of the showroom opening more rigorously, we next run an event-style difference-in-differences regression: <br>
 
 <p align="center">
 <img src="./output/DiD_City1.png" width="400" height="600"/>

@@ -37,7 +37,7 @@ The data used for this project is confidential, hence any information shown here
 
 ## Marketing Attribution Objective & Causal Inference Challenge
 
-Omnichannel marketing is fast becoming a central pillar in B2C marketing. In particular, e-commerce companies increasingly use brick-and-mortar showrooms to showcase the product physically and thereby provide important information on the product and strengthen brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall return on marketing spend. Obtaining these estimates for the showroom channel is the objective of this project. <br>
+Omnichannel marketing is fast becoming a central pillar in B2C marketing. E-commerce companies use offline brick-and-mortar showrooms to showcase the product physically and thereby provide important information on the product and strengthen brand awareness. Designing an effective marketing strategy requires accurate estimates on the impact of each channel in order to maximize the overall return on marketing spend. Obtaining these estimates for the showroom channel is the objective of this project. <br>
 
 We collaborate with a Berlin-based e-commerce company to analyze and quantify the causal impact of their brick-and-mortar showrooms on online sales. For a sample period of several years, we are provided confidential order data of every order made. Several new showrooms are opened during that time period. The showrooms allow interaction with the products on-site but both order process and fulfillment are online. Conceptually, we solve the marketing attribution problem using methods from the causal inference toolkit. <br>
 

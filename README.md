@@ -60,7 +60,16 @@ To tackle these challenges and obtain robust estimates, we employ three state-of
 ## Analyses & Results
 ### Data Preprocessing
 
-We start by cleaning and preprocessing the data. In the time dimension, online sales data is aggregated on the year-quarter level. On the geographic dimension, we aggregate sales data on the postal code level. The location of the showrooms and of the postal codes are geocoded. We then computed the distance between each showroom-postal code pair. We define areas as "treated" if their location is <50km from a showroom that opened during our sample period (some showrooms had opened before). We additionally augment the dataset with the population density (from public sources) and average credit score of the postal code area (provided to us by the e-commerce firm). <br>
+We started by pre-processing the original raw data. In addition to simple data cleaning steps, we used extensive feature engineering to prepare the dataset in accordance with the special requirements of the selected methods for our analysis.
+The original dataset is comprised of millions of rows, each row representing an individual order made on the e-commerce platform. Each column contains information related to usual business operations like post code of shipping address, order date, quantity of ordered items or value of the order.
+
+We aggregated this dataset in two dimensions: in the time dimension the orders are aggregated on the year-quarter level, and on the geographic dimensions they are aggregated on the postal code level. The postal codes together with the locations of each showroom were geocoded using Google Maps API. We then computed the distance (haversine) between each postal code and each showroom.
+
+We then flagged areas as being ‘treated’ if their location lies within a 50km distance from a showroom that opened during our sample period (some showrooms had opened before). We use this flag later in our analysis to distinguish between treated units and control units. For each quarter we also added the time difference to the opening quarter of each showroom.
+
+Finally, we augmented the dataset with population density (from publicly available data) and an average credit score for each postal code area (provided to us by the e-commerce firm).
+
+In general, the considerable size of the original dataset necessitated the extensive use of Google Cloud Storage Services and Google Big Query for data storage and data processing. The final dataset that we provide together with this package and that now only comprises a single CSV file is the result of those substantial pre-processing steps. Note that the data presented in the file is fictional to preserve company secrets. <br>
 
 
 ### Event-study Difference-in-Differences with KNN-Matched Control Group
@@ -128,5 +137,32 @@ Marketing attribution is the process of identifying which marketing efforts are 
 We find that the effect of offline showrooms on online sales is between 7% and 20%. This range of estimated effects is statistically and economically significant, meaning that the results are unlikely to have occurred by chance and have a material impact on the business. The more credible estimates are at the lower end of the range, suggesting that the true effect of the showroom on online sales is likely to be closer to 7% than to 20%. <br>
 
 Given the estimates, the impact of opening additional showrooms is to be set in relation to the costs to compute the marketing ROI for the showroom channel (outside the scope of this analysis). The showroom channel ROI then needs to be compared to the ROI of alternative marketing strategies, e.g., performance-marketing or direct mail, to determine the ROI-optimal marketing mix. Hence, these results provide insights for the optimization of the company's marketing strategy. <br>
+<br>
+<br>
+
+## Installation & Usage
+
+
+The package can be downloaded and installed by executing the following in your command-line interface (requires git and pip):
+
+`git clone https://github.com/GrosserB/omnichannel-strategy-analysis.git
+
+pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git`
+
+After installation you should be able to open the main notebook from the notebooks folder and run it for yourself. Additionally, you can use this package and its individual functions in your own projects by simply importing it like any other python package (see notebook for further examples):
+
+Eg. `import omnichannelstrategy`
+
+Also, if you want to keep your python environments clean, before installation, you can create a new local environment (requires pyenv) and then install the package (all necessary dependencies should be imported on installation).
+
+`pyenv virtualenv ‘your-environment-name’
+
+git clone https://github.com/GrosserB/omnichannel-strategy-analysis.git
+
+cd omnichannel-strategy-analysis
+
+pyenv local ‘your-environment-name’
+
+pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git`
 <br>
 <br>

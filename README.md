@@ -138,33 +138,28 @@ Given the estimates, the impact of opening additional showrooms is to be set in 
 
 ### Installation
 
-The package of for the showroom analysis can be downloaded and installed by executing the following in your CLI (requires git and pip):
+The package for the showroom analysis can be downloaded and installed by executing the following in your CLI (requires git and pip):
 
         git clone https://github.com/GrosserB/omnichannel-strategy-analysis.git
 
         pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git
 
-After installation you should be able to open the main notebook from the notebooks folder and run it for yourself. Additionally, you can use this package and its individual functions in your own projects by simply importing it like any other python package (see notebook for further examples):
+After installation, the main notebook from the notebooks folder can be openend and used. Additionally, this package and its individual functions in your own projects by simply importing it like any other python package. To keep your your python environments clean, you can create a new local environment before installation (requires pyenv) and install the package (all necessary dependencies should be imported on installation).
 
-Eg. `import omnichannelstrategy`
+        pyenv virtualenv ‘your-environment-name'
 
-Also, if you want to keep your python environments clean, before installation, you can create a new local environment (requires pyenv) and then install the package (all necessary dependencies should be imported on installation).
+        git clone https://github.com/GrosserB/omnichannel-strategy-analysis.git
 
-`pyenv virtualenv ‘your-environment-name’
+        cd omnichannel-strategy-analysis
 
-git clone https://github.com/GrosserB/omnichannel-strategy-analysis.git
+        pyenv local ‘your-environment-name’
 
-cd omnichannel-strategy-analysis
-
-pyenv local ‘your-environment-name’
-
-pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git`
+        pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git`
 
 
-To follow our analyses, we provide a dataset with this package. The dataset contains preprocessed and aggregated Note that the data presented in the file is fictional to preserve company secret
+### Usage
 
-
-
+To follow our analyses, we provide a dataset with this package. The dataset contains preprocessed and aggregated data on the post code-year-quarter level. It is available as single csv in the data folder. The data in the file conforms to the original format, but all values are fictional.
 
 <br>
 <br>

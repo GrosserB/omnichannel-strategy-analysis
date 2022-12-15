@@ -62,7 +62,7 @@ To tackle these challenges and obtain robust estimates, we employ three state-of
 
 We started by pre-processing the raw data provided to us by the e-commerce firm (we document the individual preprocessing steps in this [file](https://github.com/GrosserB/omnichannel-strategy-analysis/blob/main/notebooks/preprocessing_steps.txt)). The original dataset is comprised of several million rows, each observation representing an individual order. We aggregate the data in two dimensions: in the time dimension the orders are aggregated on the year-quarter level, and on the geographic dimensions they are aggregated on the postal code level. The locations of the postal codes as well as the showroom locations are geocoded using Google Maps API. We then compute the (haversine) distance of each postal code-showroom combination. Areas are flagged as ‘treated’ if their location lies within a 50km distance from a showroom that opened during our sample period (some showrooms had opened before). For each quarter we also add the time difference to the opening quarter of each showroom. Finally, we augment the dataset with population density (from publicly available data) and an average credit score for each postal code area (provided to us by the e-commerce firm). <br>
 
-Due to the considerable size of the original dataset, we employ Google Cloud Storage Services and Google Big Query for data storage and data processing. <br>
+Due to the considerable size of the original dataset, we employ Google Cloud Storage Services and Google Big Query for data storage and processing. <br>
 <br>
 
 
@@ -136,15 +136,13 @@ Given the estimates, the impact of opening additional showrooms is to be set in 
 
 ## Installation & Usage
 
-To follow our analyses, we provide a dataset with this package. The dataset contains preprocessed and aggregated Note that the data presented in the file is fictional to preserve company secret
+### Installation
 
+The package of for the showroom analysis can be downloaded and installed by executing the following in your CLI (requires git and pip):
 
+        git clone https://github.com/GrosserB/omnichannel-strategy-analysis.git
 
-The package can be downloaded and installed by executing the following in your command-line interface (requires git and pip):
-
-`git clone https://github.com/GrosserB/omnichannel-strategy-analysis.git
-
-pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git`
+        pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git
 
 After installation you should be able to open the main notebook from the notebooks folder and run it for yourself. Additionally, you can use this package and its individual functions in your own projects by simply importing it like any other python package (see notebook for further examples):
 
@@ -161,5 +159,12 @@ cd omnichannel-strategy-analysis
 pyenv local ‘your-environment-name’
 
 pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git`
+
+
+To follow our analyses, we provide a dataset with this package. The dataset contains preprocessed and aggregated Note that the data presented in the file is fictional to preserve company secret
+
+
+
+
 <br>
 <br>

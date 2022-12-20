@@ -144,7 +144,7 @@ The package for the showroom analysis can be downloaded and installed by executi
 
         pip install git+https://github.com/GrosserB/omnichannel-strategy-analysis.git
 
-After installation, the main notebook from the notebooks folder can be openend and used. Additionally, this package and its individual functions in your own projects by simply importing it like any other python package. To keep your your python environments clean, you can create a new local environment before installation (requires pyenv) and install the package (all necessary dependencies should be imported on installation).
+After installation, the main notebook from the notebooks folder can be opened and used. Additionally, this package and its individual functions can be used in your own projects by simply importing it like any other python package. To keep your python environments clean, you can create a new local environment before installation (requires pyenv) and install the package (all necessary dependencies should be imported on installation):
 
         pyenv virtualenv ‘your-environment-name'
 
